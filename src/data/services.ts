@@ -89,7 +89,7 @@ export type ManifestoQuote = { text: string; author: string[] }
  */
 export const manifesto = {
   label: 'Manifesto',
-  caption: '[ Art. Intelligence. Impact. ]',
+  caption: '[ We are design-driven ]',
   title: "we don't run ads\n→ we orchestrate movements",
   body: [
     "We don't design posts. We paint legacies. This is the renaissance of brands.",
@@ -116,8 +116,10 @@ export const manifesto = {
  * These are dark marks on transparent or white grounds, which is why the band
  * they sit in is the light one: on the black band half of them disappeared.
  */
-export const clientLogos: { src: string; name: string }[] = [
-  { src: '/images/clients/kimirica.svg', name: 'Kimirica Hunter' },
+export const clientLogos: { src: string; name: string; invert?: boolean }[] = [
+  // Kimirica's mark is drawn in white for a dark ground — it is invisible on
+  // the light wall unless it is inverted.
+  { src: '/images/clients/kimirica.svg', name: 'Kimirica Hunter', invert: true },
   { src: '/images/clients/ozone-group.png', name: 'Ozone Group' },
   { src: '/images/clients/jlu.png', name: 'Jagran Lakecity University' },
   { src: '/images/clients/shrewsbury.svg', name: 'Shrewsbury International School' },

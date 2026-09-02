@@ -7,7 +7,7 @@ import { clientLogos } from '@/data/services'
 import { MonopoText } from '@/components/ui/MonopoText'
 import styles from './Partnerships.module.scss'
 
-/** `c-Services-logos` — client marks in three bands separated by hairlines. */
+/** `c-Services-logos` — the client wall, two rows of five on one hairline grid. */
 export function Partnerships() {
   const rootRef = useRef<HTMLElement>(null)
 
@@ -26,29 +26,29 @@ export function Partnerships() {
 
   return (
     <section ref={rootRef} className={`${styles.root} container`}>
-      <div className="row stretch">
+      <div className="row">
         <div className="col-2of24 col-md-24of24 col-sm-12of12">
           <span className={`${styles.info} t-text--sm`}>Clients</span>
         </div>
-        <div className="col-9of24 col-sm-12of12">
-          <h2 className={`${styles.title} t-h2`}>
+        <div className="col-16of24 col-md-24of24 col-sm-12of12">
+          <h2 className="t-h2 t-h2--display">
             <MonopoText>Brands we compose for</MonopoText>
           </h2>
         </div>
       </div>
 
-      <div className="row">
-        <div className="col-13of24 offset-9of24 col-md-18of24 offset-md-6of24 col-sm-10of12 offset-sm-2of12">
-          <ul className={`${styles.logos} t-list`}>
-            {clientLogos.map((src, i) => (
-              <li className={styles.item} key={src} data-reveal>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt={`Client ${i + 1}`} loading="lazy" decoding="async" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      <ul className={`${styles.logos} t-list`}>
+        {clientLogos.map((logo) => (
+          <li
+            className={`${styles.item} ${logo.invert ? styles.invert : ''}`}
+            key={logo.src}
+            data-reveal
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" />
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

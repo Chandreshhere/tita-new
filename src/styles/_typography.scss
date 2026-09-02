@@ -50,6 +50,16 @@
   @include sm { @include fluid-size(6.4, 24); letter-spacing: normal; }
 }
 
+// The statement cut. On the home page the section titles run at ~72px but the
+// standing statement under `® ABOUT` is set around half that — same face, same
+// weight, one step down — so a paragraph-length line stays a paragraph rather
+// than becoming a wall of display type.
+.t-h3--display {
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.12;
+}
+
 .t-h4, .t-wysiwyg h3 {
   margin-block: 0; min-height: 0;
   font-family: var(--font-heading);

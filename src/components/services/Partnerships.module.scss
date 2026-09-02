@@ -2,47 +2,62 @@
 @use 'mixins' as *;
 
 .root {
-  padding-top: 12vh;
+  padding-top: 14vh;
   padding-bottom: 12vh;
-  @include sm { padding-top: 60px; padding-bottom: 60px; }
+  @include md { padding-top: 110px; padding-bottom: 90px; }
+  @include sm { padding-top: 70px; padding-bottom: 60px; }
 }
 
 .info {
-  position: sticky;
-  top: 18vh;
   display: block;
-  opacity: 0.5;
-  @include md { position: static; margin-bottom: 20px; }
+  color: $grey;
+  @include md { margin-bottom: 20px; }
 }
 
-.title { margin-bottom: 8vh; }
-
+// A hairline wall: the 1px grid gap over a rule-coloured ground is what draws
+// the lines, so no cell needs its own border to fight over shared edges.
 .logos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  @include sm { grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 7vh;
+  background: rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  @include md { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 48px; }
+  @include sm { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 36px; }
 }
 
-// Hairlines between the bands, matching `c-Services-logos-line`.
 .item {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 36px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  aspect-ratio: 3 / 2;
+  padding: 12%;
+  background: $white;
 
   img {
     max-width: 100%;
-    height: auto;
-    max-height: 44px;
+    max-height: 100%;
     width: auto;
-    opacity: 0.7;
-    filter: invert(1) brightness(2);
-    transition: opacity $dur $ease-out;
+    height: auto;
+    object-fit: contain;
+    // The marks arrive in a dozen different colourways; one flat treatment
+    // keeps the wall calm, and the client's own colour comes back on hover.
+    filter: grayscale(1);
+    opacity: 0.55;
+    transition: filter $dur $ease-out, opacity $dur $ease-out;
   }
-  @include hover { img { opacity: 1; } }
 
-  &:nth-last-child(-n + 3) { border-bottom: 0; }
-  @include sm { &:nth-last-child(-n + 3) { border-bottom: 1px solid rgba(255, 255, 255, 0.2); } }
+  @include hover {
+    img { filter: none; opacity: 1; }
+  }
 }
+
+// Marks supplied as white artwork. Inverting is what makes them visible here,
+// so hover raises the opacity rather than dropping the filter — dropping it
+// would put a white mark back on a white cell.
+.invert img {
+  filter: grayscale(1) invert(1);
+  .item:hover & { filter: grayscale(1) invert(1); }
+}
+.invert:hover img { filter: grayscale(1) invert(1); opacity: 1; }

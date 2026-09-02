@@ -32,8 +32,11 @@ export function ServicesList() {
 
         <div className="col-22of24 col-sm-12of12">
           <div className="row">
-            <div className="col-14of22 col-sm-12of12">
-              <div className="t-wysiwyg t-h2" data-reveal>
+            {/* The home page sets this same standing statement across most of
+                the measure, so it reads as three or four lines rather than a
+                narrow stack. */}
+            <div className="col-17of22 col-md-22of22 col-sm-12of12">
+              <div className="t-wysiwyg t-h3 t-h3--display" data-reveal>
                 <p>{servicesIntro}</p>
               </div>
               <TransitionLink
@@ -60,7 +63,7 @@ export function ServicesList() {
                 <div className={styles.item} data-reveal>
                   <div className={styles.itemHead}>
                     <span className={styles.number}>{group.number}</span>
-                    <h2 className={`${styles.itemLabel} t-text--lg`}>{group.title}</h2>
+                    <h2 className={`${styles.itemLabel} t-h5 t-h5--display`}>{group.title}</h2>
                   </div>
                   <p className={`${styles.subtitle} t-text--sm`}>{group.subtitle}</p>
                   <p className={`${styles.description} t-text`}>{group.description}</p>

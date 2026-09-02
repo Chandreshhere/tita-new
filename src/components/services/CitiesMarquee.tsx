@@ -42,7 +42,7 @@ export function CitiesMarquee() {
 
   return (
     <div ref={rootRef} className={styles.root} aria-hidden="true">
-      <span className={`${styles.band} t-h2`}>{BAND.repeat(6)}</span>
+      <span className={`${styles.band} t-h2 t-h2--display`}>{BAND.repeat(6)}</span>
     </div>
   )
 }

@@ -34,10 +34,10 @@ export function ClientBand() {
       </div>
 
       <ul className={`${styles.logos} t-list`}>
-        {clientLogos.map((src, i) => (
-          <li className={styles.item} key={src} data-reveal>
+        {clientLogos.map((logo) => (
+          <li className={styles.item} key={logo.src} data-reveal>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={`Client ${i + 1}`} loading="lazy" decoding="async" />
+            <img src={logo.src} alt={logo.name} loading="lazy" decoding="async" />
           </li>
         ))}
       </ul>

@@ -12,6 +12,16 @@
   &.inNav { position: relative; }
 }
 
+// The header is absolutely positioned at the top of the document, so it only
+// ever sits over the page's hero — never over the sections below it. On the
+// pages whose <body> is dark that works out, because `color: inherit` picks up
+// the white. Services keeps a light <body> (its content bands are white) while
+// opening on a near-black gradient, so the inherited black put the whole nav —
+// wordmark, links, clocks and burger — invisibly on black.
+:global(body.is-services) .root:not(.inNav) {
+  color: $white;
+}
+
 .container {
   padding-top: 35px;
   position: relative;

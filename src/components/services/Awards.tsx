@@ -36,8 +36,8 @@ export function Awards() {
         <div className="col-2of24 col-md-24of24 col-sm-12of12">
           <span className={`${styles.info} t-text--sm`}>Process</span>
         </div>
-        <div className="col-9of24 col-sm-12of12">
-          <h2 className={`${styles.title} t-h2`}>
+        <div className="col-16of24 col-md-24of24 col-sm-12of12">
+          <h2 className={`${styles.title} t-h2 t-h2--display`}>
             <MonopoText>How we work</MonopoText>
           </h2>
         </div>
