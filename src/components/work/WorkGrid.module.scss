@@ -10,43 +10,6 @@
   @include sm { padding-top: 60px; padding-bottom: 60px; }
 }
 
-.filters {
-  position: sticky;
-  top: 18vh;
-  @include sm { position: static; margin-bottom: 40px; }
-}
-
-.ruler {
-  position: absolute;
-  top: 0;
-  left: -24px;
-  color: rgba(255, 255, 255, 0.5);
-  @include md { display: none; }
-}
-
-.filtersList {
-  @include sm { display: none; }
-  li { margin-top: 14px; }
-  li:first-child { margin-top: 0; }
-}
-
-.filterBtn {
-  color: inherit;
-  opacity: 0.4;
-  text-align: left;
-  transition: opacity $dur $ease-out;
-  @include hover { opacity: 1; }
-  &.isActive { opacity: 1; }
-}
-
-.select {
-  display: none;
-  @include sm { display: block; }
-  select { color: $white; border-bottom-color: rgba(255, 255, 255, 0.3); }
-  option { color: $black; }
-  &:after { color: $white; }
-}
-
 .item {
   display: block;
   color: inherit;

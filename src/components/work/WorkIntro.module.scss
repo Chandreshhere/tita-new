@@ -1,38 +1,14 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-.root {
-  position: relative;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  color: $white;
-  padding-bottom: 6vh;
+.title {
+  display: block;
+  text-align: left;
+  // Three banner-height lines, so the full-viewport type scale is a size too
+  // large — the same step down to roughly `t-h2`+ that the Services hero takes.
+  @include fluid-size(4.4270833333, 40);
+  @include sm { @include fluid-size(9.8666666667, 37); }
 }
-
-.gradient { position: absolute; inset: 0; z-index: 0; }
-
-.rulerLeft,
-.rulerRight {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  color: $white;
-  @include sm { display: none; }
-}
-.rulerLeft  { left: $page-padding; }
-.rulerRight { right: $page-padding; }
-
-.inner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-}
-
-.title { display: block; }
 
 .line {
   display: block;
@@ -40,14 +16,16 @@
   > span { display: block; }
 }
 
-.body {
-  padding-bottom: 0.6em;
-  @include sm { margin-top: 24px; }
+.line0 { margin-left: 0; }
+.line1 { margin-left: 6vw; }
+.line2 { margin-left: 3vw; }
+@include sm {
+  .line1 { margin-left: 4vw; }
+  .line2 { margin-left: 2vw; }
 }
 
-.cue {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  @include sm { display: none; }
+.info {
+  display: block;
+  margin: 0;
+  opacity: 0.7;
 }
