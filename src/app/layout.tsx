@@ -2,6 +2,11 @@ import type { Metadata, Viewport } from 'next'
 import { Inter_Tight } from 'next/font/google'
 import { AppShell } from '@/components/core/AppShell'
 import '@/styles/globals.scss'
+// The footer is the Novasite one on every route, and its rules are scoped
+// under `.novasite`, so the template stylesheet is site-wide rather than
+// home-only.
+import '@/styles/novasite.css'
+import '@/styles/novasite-tita.css'
 
 /**
  * Inter Tight is the body face of the Novasite build — the paragraphs, nav and

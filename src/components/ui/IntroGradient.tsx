@@ -44,7 +44,7 @@ export function IntroGradient({ config, children, foot, className, short = false
       const tl = gsap.timeline({ delay: 0.3 })
       tl.fromTo(
         lines,
-        { yPercent: 110, opacity: 0 },
+        { yPercent: 125, opacity: 0 },
         { yPercent: 0, opacity: 1, duration: 1.15, stagger: 0.09, ease: 'power3.out' },
       )
       if (footEl) {

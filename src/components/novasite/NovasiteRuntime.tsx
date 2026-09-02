@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { SplitText } from 'gsap/SplitText'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
 
@@ -111,14 +112,53 @@ function interceptForms(root: HTMLElement) {
   return () => root.removeEventListener('submit', onSubmit, true)
 }
 
-export function NovasiteRuntime({ rootId }: { rootId: string }) {
+/**
+ * IX2 scans the DOM once, when the page bundle loads. Routing here is
+ * client-side, so a route that mounts new `.novasite` markup after that scan
+ * gets none of its interactions — and worse, the template's pre-init CSS leaves
+ * those elements hidden. Tearing the store down and re-initialising it with the
+ * same data re-scans whatever is on screen now.
+ */
+function reinitInteractions() {
+  const wf = (window as unknown as { Webflow?: { require?: (m: string) => any; ready?: () => void } }).Webflow
+  if (!wf?.require) return
+  try {
+    const ix2 = wf.require('ix2')
+    const data = ix2?.store?.getState?.()?.ixData
+    if (ix2 && data) {
+      ix2.destroy()
+      ix2.init(data)
+    }
+  } catch (error) {
+    console.warn('[novasite] could not re-init interactions', error)
+  }
+  // Re-binds the widgets too — the dropdowns and the testimonial slider.
+  try {
+    wf.ready?.()
+  } catch {
+    /* widget re-init is best effort */
+  }
+}
+
+export function NovasiteRuntime({ rootId }: { rootId?: string }) {
+  const pathname = usePathname()
+
   useEffect(() => {
-    const root = document.getElementById(rootId)
-    if (!root) return
+    const root = (rootId && document.getElementById(rootId)) || document.body
     const detach = interceptForms(root)
-    loadRuntime().catch((error) => console.error('[novasite] runtime failed', error))
-    return detach
-  }, [rootId])
+
+    let cancelled = false
+    loadRuntime()
+      .then(() => {
+        if (!cancelled) reinitInteractions()
+      })
+      .catch((error) => console.error('[novasite] runtime failed', error))
+
+    return () => {
+      cancelled = true
+      detach()
+    }
+  }, [rootId, pathname])
 
   return null
 }

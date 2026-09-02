@@ -58,6 +58,9 @@
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.12;
+  // `.t-h3`'s own phone size is tuned for short headings; a statement set in it
+  // runs to ten lines on a 390px screen.
+  @include sm { @include fluid-size(5.3333333333, 20); }
 }
 
 .t-h4, .t-wysiwyg h3 {
@@ -82,8 +85,8 @@
 
 // `.content-title` / `.work-card-heading` from the same build — semibold rather
 // than bold, for headings that sit inside a block instead of opening one.
+// `.t-h4` is already uppercase, so weight is all this needs to add.
 .t-h4--display { font-weight: 600; }
-.t-h5--display { font-weight: 600; text-transform: uppercase; }
 
 .t-h6 {
   margin-block: 0; min-height: 0;
@@ -247,4 +250,17 @@
   display: inline-block;
   &:first-child { margin-right: 8px; }
   &:last-child  { margin-left: 8px; }
+}
+
+// ─── Reveal masks ─────────────────────────────────────────────────────────────
+// Every line-reveal wraps its text in an `overflow: hidden` mask so the line can
+// slide up from underneath. Over the 0.934 display line-height above, that mask
+// cuts the ink off every descender — the g in "legacies", the p in "paint", a
+// trailing comma. Measured overflow is 0.106em at the hero size.
+//
+// So the mask gets room below the baseline and the box is pulled back by the
+// same amount: glyphs render whole, and the line rhythm is untouched.
+:has(> [data-line]) {
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
 }

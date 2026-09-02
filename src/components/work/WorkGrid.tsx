@@ -1,21 +1,21 @@
 'use client'
 
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
 import { projects } from '@/data/projects'
 import { TransitionLink } from '@/components/core/TransitionLink'
 import { MonopoText } from '@/components/ui/MonopoText'
+import { Ruler } from '@/components/ui/Ruler'
 import { ClientMark } from './ClientMark'
 import styles from './WorkGrid.module.scss'
 
 /**
- * The portfolio grid — every client, in collection order.
+ * The portfolio grid, with the measurement rail down its left margin.
  *
- * The collection rail that used to sit down the left (All · Renaissance ·
- * Amplify · Compose · Ignite · Genesis) is gone, along with its mobile select
- * and the enter/exit animation that swapped one filtered set for another. The
- * grid now runs the full measure.
+ * The rail's collection labels (All · Renaissance · Amplify · Compose · Ignite ·
+ * Genesis) and the mobile select that mirrored them are gone; the ruler they
+ * sat under stays, and still tracks how far through the grid you have scrolled.
  *
  * Items alternate between the two 8-of-18 columns and every other one carries a
  * parallax offset, which is what gives the grid its staggered, non-gridlike
@@ -23,7 +23,25 @@ import styles from './WorkGrid.module.scss'
  */
 export function WorkGrid() {
   const gridRef = useRef<HTMLDivElement>(null)
+  const [progress, setProgress] = useState(0)
 
+  // The rail's ruler mirrors how far through the grid you've scrolled.
+  useEffect(() => {
+    const grid = gridRef.current
+    if (!grid) return
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: grid,
+        start: 'top center',
+        end: 'bottom bottom',
+        onUpdate: (self) => setProgress(self.progress),
+        invalidateOnRefresh: true,
+      })
+    }, grid)
+    return () => ctx.revert()
+  }, [])
+
+  // Entrance for the grid.
   useLayoutEffect(() => {
     const grid = gridRef.current
     if (!grid) return
@@ -78,13 +96,19 @@ export function WorkGrid() {
   return (
     <div className={`${styles.root} container`}>
       <div className="row">
-        <div className="col-24of24 col-sm-12of12">
+        <div className="col-3of24 col-sm-12of12">
+          <div className={styles.filters}>
+            <Ruler className={styles.ruler} cm={8} mm={4} progress={progress} />
+          </div>
+        </div>
+
+        <div className="col-18of24 offset-3of24 col-sm-12of12 offset-sm-0">
           <div ref={gridRef} className="row">
             {projects.map((project, i) => (
               <TransitionLink
                 key={project.slug}
-                className={`${styles.item} col-11of24 col-sm-12of12 offset-sm-0 ${
-                  i % 2 === 1 ? 'offset-2of24' : ''
+                className={`${styles.item} col-8of18 col-sm-12of12 offset-sm-0 ${
+                  i % 2 === 1 ? 'offset-2of18' : ''
                 }`}
                 href={`/work/${project.slug}`}
                 data-cursor="case"
@@ -124,9 +148,7 @@ export function WorkGrid() {
             ))}
           </div>
 
-          <p className={`${styles.count} t-text--sm`}>
-            {projects.length} clients
-          </p>
+          <p className={`${styles.count} t-text--sm`}>{projects.length} clients</p>
         </div>
       </div>
     </div>

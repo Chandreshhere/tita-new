@@ -56,7 +56,7 @@ export function HomeHero() {
 
       tl.fromTo(
         lines,
-        { yPercent: 110, opacity: 0 },
+        { yPercent: 125, opacity: 0 },
         { yPercent: 0, opacity: 1, duration: 1.2, stagger: 0.09, ease: 'power3.out' },
       ).fromTo(
         foot,

@@ -1,6 +1,3 @@
-import '@/styles/novasite.css'
-import '@/styles/novasite-tita.css'
-
 import { NovasiteAbout } from './NovasiteAbout'
 import { NovasiteWork } from './NovasiteWork'
 import { NovasiteService } from './NovasiteService'
@@ -10,8 +7,6 @@ import { NovasiteTabletTestimonial } from './NovasiteTabletTestimonial'
 import { NovasiteSticky } from './NovasiteSticky'
 import { NovasiteContact } from './NovasiteContact'
 import { NovasiteCta } from './NovasiteCta'
-import { NovasiteFooter } from './NovasiteFooter'
-import { NovasiteRuntime } from './NovasiteRuntime'
 
 const ROOT_ID = 'novasite-root'
 
@@ -40,8 +35,6 @@ export function NovasiteHome() {
       <NovasiteSticky />
       <NovasiteContact />
       <NovasiteCta />
-      <NovasiteFooter />
-      <NovasiteRuntime rootId={ROOT_ID} />
     </div>
   )
 }

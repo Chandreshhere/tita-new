@@ -4,7 +4,8 @@ import { usePathname } from 'next/navigation'
 import { useEffect, type ReactNode } from 'react'
 import { ScrollTrigger } from '@/lib/gsap'
 import { Navigation } from '@/components/navigation/Navigation'
-import { Footer } from '@/components/footer/Footer'
+import { SiteFooter } from '@/components/footer/SiteFooter'
+import { NovasiteRuntime } from '@/components/novasite/NovasiteRuntime'
 import { CustomCursor } from './CustomCursor'
 import { PageTransitionProvider } from './PageTransition'
 import { Preloader } from './Preloader'
@@ -44,10 +45,11 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="c-App">
           <Navigation />
           <main id="main">{children}</main>
-          {/* The home page ends in the Novasite template's own footer, so the
-              site footer would be a second one stacked under it. */}
-          {pathname === '/' ? null : <Footer />}
+          <SiteFooter />
         </div>
+        {/* Drives every `.novasite` subtree on the page — the cloned sections on
+            home and the footer everywhere — and re-scans on each route change. */}
+        <NovasiteRuntime />
         <CustomCursor />
         <CookieNotice />
         <Preloader />

@@ -10,6 +10,20 @@
   @include sm { padding-top: 60px; padding-bottom: 60px; }
 }
 
+.filters {
+  position: sticky;
+  top: 18vh;
+  @include sm { display: none; }
+}
+
+.ruler {
+  position: absolute;
+  top: 0;
+  left: -24px;
+  color: rgba(255, 255, 255, 0.5);
+  @include md { display: none; }
+}
+
 .item {
   display: block;
   color: inherit;
