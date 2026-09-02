@@ -1,0 +1,72 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  overflow: hidden;
+  color: $white;
+}
+
+.gradient { position: absolute; inset: 0; z-index: 0; }
+
+.ruler {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: $white;
+  @include sm { display: none; }
+}
+.rulerLeft  { left: $page-padding; }
+.rulerRight { right: $page-padding; }
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.foot {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 35px;
+  @include sm { padding-bottom: 24px; }
+}
+
+// The banner variant. The headline sits below the header rather than dead
+// centre of the viewport, so the page's first section is visible on landing
+// instead of a full screen of gradient.
+.short {
+  height: auto;
+  min-height: 0;
+  padding-top: 20vh;
+  padding-bottom: 12vh;
+  @include md { padding-top: 190px; padding-bottom: 90px; }
+  @include sm { padding-top: 150px; padding-bottom: 70px; }
+
+  // Block, not the centring flex the full-height hero uses: the banner's
+  // child is a `.container` that owns its own width and gutters.
+  .inner {
+    display: block;
+    height: auto;
+    text-align: left;
+  }
+
+  .foot {
+    position: static;
+    margin-top: 8vh;
+    padding-bottom: 0;
+    @include sm { margin-top: 40px; }
+  }
+}

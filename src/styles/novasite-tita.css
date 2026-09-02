@@ -1,0 +1,20 @@
+/* Adjustments the TITA copy needs on top of the verbatim Novasite stylesheet.
+   Kept in a separate file because `novasite.css` is generated from the
+   template's own `styles.css` and is overwritten whenever that is regenerated.
+   Loaded after it, so these rules win. */
+
+/* The template's placeholder address was `info@novasite.com` (17 characters);
+   the studio's is `naamdasi@thisisthat.co.in` (25), which clips out of the CTA
+   between roughly 1264px and 992px and again on phones. Capping the size
+   against the viewport keeps it on one line at every width and leaves the
+   full-desktop rendering at the template's own 72px. */
+.novasite .contact-mail-wrap .content-title {
+  font-size: min(var(--_typography---heading-size--h3), 5.7vw);
+}
+
+/* The bottom marquee tokens were single words in the template (`portofio®`,
+   `novasite®`). `this is that®` contains spaces, so the flex item wrapped it
+   onto three lines and broke the single-line scroll. */
+.novasite .footer-bottom-text {
+  white-space: nowrap;
+}

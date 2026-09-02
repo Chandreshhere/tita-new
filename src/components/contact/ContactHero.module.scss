@@ -1,0 +1,31 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  height: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  align-items: center;
+  @include md { position: static; height: auto; padding: 18vh 0 8vh; }
+  @include sm { padding: 120px 0 40px; }
+}
+
+.ruler {
+  color: $black;
+  @include sm { display: none; }
+}
+
+.title { display: block; }
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}

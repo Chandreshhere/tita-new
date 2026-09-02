@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  background: $white;
+  color: $black;
+}
+
+.rail {
+  @include md { order: -1; }
+}
+
+.section {
+  position: relative;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12vh 0;
+  @include md { min-height: 0; padding: 8vh 0; }
+  @include sm { padding: 48px 0; }
+}
+
+.item {
+  padding: 32px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  &:last-child { border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+}
+
+// The ring motif sits behind the copy, bleeding off the right edge.
+.circles {
+  position: absolute;
+  top: 6%;
+  right: -8%;
+  width: 34%;
+  aspect-ratio: 1;
+  z-index: 0;
+  pointer-events: none;
+  @include sm { width: 55%; right: -18%; }
+}
+.circles2 { top: auto; bottom: 4%; right: auto; left: -12%; width: 30%; }
+.circles3 { top: 2%; right: 4%; width: 26%; }
+
+.section > *:not(.circles) { position: relative; z-index: 1; }
+
+.block { @include sm { margin-top: 40px; } }
+
+.blockTitle { margin-bottom: 16px; }

@@ -1,0 +1,20 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  padding-top: 10vh;
+  padding-bottom: 12vh;
+  @include sm { padding-top: 50px; padding-bottom: 60px; }
+}
+
+.info {
+  position: sticky;
+  top: 20vh;
+  display: block;
+  opacity: 0.5;
+  @include md { position: static; margin-bottom: 24px; }
+}
+
+.title {
+  @include sm { margin-bottom: 32px; }
+}

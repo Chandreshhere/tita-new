@@ -1,0 +1,85 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.t-form-line {
+  display: block;
+  position: relative;
+  margin-bottom: 42px;
+  &:last-child { margin-bottom: 0; }
+}
+
+.t-label {
+  display: block;
+  margin-bottom: 8px;
+  color: $grey;
+}
+
+%field {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0;
+  padding: 8px 0;
+  color: inherit;
+  font-family: inherit;
+  @include fluid-size(0.8333333333, 14);
+  line-height: 28px;
+  appearance: none;
+  transition: border-color $dur $ease-out;
+
+  &::placeholder { color: $grey; }
+  &:focus { outline: 0; border-bottom-color: $black; }
+}
+
+.t-input--text { @extend %field; }
+
+.t-textarea {
+  @extend %field;
+  resize: none;
+  min-height: 140px;
+  overflow: auto;
+}
+
+.is-error {
+  .t-input--text, .t-textarea { border-bottom-color: $red; }
+  .t-form-error { display: block; }
+}
+
+.t-form-error {
+  display: none;
+  margin-top: 5px;
+  color: $red;
+  @include fluid-size(0.8333333333, 14);
+}
+
+.t-form-info {
+  display: block;
+  margin-top: 3px;
+  color: $grey;
+  line-height: 1.75;
+  @include fluid-size(0.8333333333, 14);
+}
+
+.t-input--select-container {
+  position: relative;
+  &:after {
+    content: '↓';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+.t-input--select {
+  @extend %field;
+  cursor: pointer;
+  padding-right: 24px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}

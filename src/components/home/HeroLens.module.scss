@@ -1,0 +1,17 @@
+.root {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/**
+ * Applied to the DOM headline once the canvas is confirmed drawing. The text
+ * stays in the accessibility tree and in the DOM for crawlers — it just stops
+ * painting, because the canvas above is now drawing the same words.
+ */
+.handedOver {
+  opacity: 0;
+  // Not `visibility: hidden` — that would take it out of the a11y tree.
+  pointer-events: none;
+}

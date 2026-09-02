@@ -1,0 +1,44 @@
+// ─── Clash Display ────────────────────────────────────────────────────────────
+// The display face of the Novasite build — everything from the About section
+// down to the footer is set in it — now carrying the whole site so the pages
+// above and below the hero read as one thing.
+//
+// The files are the ones the template itself loads, vendored to
+// /public/novasite/fonts, so the type is identical on both sides of the hero.
+// The family is spelled exactly as `novasite.css` spells it — `Clashdisplay` —
+// so the clone below the hero and the rest of the site resolve to one family
+// rather than two identical ones under different names.
+
+@font-face {
+  font-family: 'Clashdisplay';
+  src: url('/novasite/fonts/ClashDisplay-Extralight.otf') format('opentype');
+  font-weight: 200; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Clashdisplay';
+  src: url('/novasite/fonts/ClashDisplay-Light.otf') format('opentype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Clashdisplay';
+  src: url('/novasite/fonts/ClashDisplay-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Clashdisplay';
+  src: url('/novasite/fonts/ClashDisplay-Medium.otf') format('opentype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Clashdisplay';
+  src: url('/novasite/fonts/ClashDisplay-Semibold.otf') format('opentype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+// Clash Display stops at Bold, but the type scale asks for 800 in a dozen
+// places. Claiming 700–900 hands those the real Bold instead of letting the
+// browser smear a synthetic one.
+@font-face {
+  font-family: 'Clashdisplay';
+  src: url('/novasite/fonts/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: 700 900; font-style: normal; font-display: swap;
+}

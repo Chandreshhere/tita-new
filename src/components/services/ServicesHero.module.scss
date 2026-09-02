@@ -1,0 +1,26 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.title {
+  display: block;
+  text-align: left;
+  // Two banner-height lines, so the full-viewport type scale is a size too
+  // large — this is the `t-h1` step down to roughly `t-h2`+.
+  @include fluid-size(4.4270833333, 40);
+  @include sm { @include fluid-size(9.8666666667, 37); }
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}
+
+.line0 { margin-left: 0; }
+.line1 { margin-left: 6vw; }
+@include sm { .line1 { margin-left: 4vw; } }
+
+.info {
+  display: block;
+  opacity: 0.7;
+}

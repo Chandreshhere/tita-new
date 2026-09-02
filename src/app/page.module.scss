@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.root {
+  position: relative;
+  background: $black; // fallback behind the fixed gradient canvas
+}
+
+// Everything past the pinned stack. The gradient is the hero and stack's
+// signature; long-form copy below it needs a solid ground to stay legible.
+.solid {
+  position: relative;
+  z-index: 1;
+  background: $black;
+  color: $white;
+}

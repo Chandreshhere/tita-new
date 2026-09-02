@@ -1,0 +1,48 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+  @include sm { padding-top: 60px; padding-bottom: 60px; }
+}
+
+.info {
+  position: sticky;
+  top: 18vh;
+  display: block;
+  opacity: 0.5;
+  @include md { position: static; margin-bottom: 20px; }
+}
+
+.title { margin-bottom: 8vh; }
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  @include sm { grid-template-columns: repeat(2, 1fr); }
+}
+
+// Hairlines between the bands, matching `c-Services-logos-line`.
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  img {
+    max-width: 100%;
+    height: auto;
+    max-height: 44px;
+    width: auto;
+    opacity: 0.7;
+    filter: invert(1) brightness(2);
+    transition: opacity $dur $ease-out;
+  }
+  @include hover { img { opacity: 1; } }
+
+  &:nth-last-child(-n + 3) { border-bottom: 0; }
+  @include sm { &:nth-last-child(-n + 3) { border-bottom: 1px solid rgba(255, 255, 255, 0.2); } }
+}

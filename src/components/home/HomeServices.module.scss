@@ -1,0 +1,64 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  z-index: 1;
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+  color: $white;
+  @include sm { padding-top: 50px; padding-bottom: 50px; }
+}
+
+.label {
+  position: sticky;
+  top: 18vh;
+  display: block;
+  opacity: 0.5;
+  @include md { position: static; margin-bottom: 24px; }
+}
+
+.title { overflow: hidden; > span { display: block; } }
+
+.lede { margin-top: 20px; opacity: 0.7; }
+
+.list { margin-top: 10vh; @include sm { margin-top: 44px; } }
+
+.item {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  transition: padding-left $dur $ease-out;
+  @include hover { padding-left: 12px; }
+  &:last-child { border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+  @include sm { padding: 28px 0; }
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  @include fluid-size(0.6770833333, 12);
+  opacity: 0.5;
+}
+
+.itemTitle { text-transform: uppercase; }
+
+.subtitle { margin-top: 8px; opacity: 0.5; }
+
+.desc {
+  opacity: 0.7;
+  @include sm { margin-top: 16px; }
+}
+
+.tags {
+  opacity: 0.6;
+  li { margin-top: 6px; }
+  @include sm { margin-top: 16px; }
+}
+
+.foot {
+  margin-top: 8vh;
+  display: flex;
+  justify-content: center;
+  @include sm { margin-top: 40px; }
+}

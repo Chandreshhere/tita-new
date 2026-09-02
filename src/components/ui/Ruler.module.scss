@@ -1,0 +1,57 @@
+@use 'variables' as *;
+
+.root {
+  position: relative;
+  padding-left: 15px;
+}
+
+.cm {
+  position: relative;
+  width: 6px;
+  margin-top: 16px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 1px;
+    background: currentColor;
+  }
+  &:first-child { margin-top: 0; }
+  &:first-child .mm:first-child { margin-top: 0; }
+}
+
+.mm {
+  width: 2px;
+  height: 1px;
+  background: currentColor;
+  margin-top: 16px;
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 5px solid currentColor;
+  margin-top: -3px;
+  transition: transform $dur-slow $ease-out;
+}
+
+// Mirrored variant used on the right-hand margin of the intro gradients.
+.alt {
+  padding-left: 0;
+  padding-right: 15px;
+
+  .cm:before { left: auto; right: 0; }
+  .mm { margin-left: auto; }
+  .cursor {
+    left: auto;
+    right: 0;
+    border-left: none;
+    border-right: 5px solid currentColor;
+  }
+}

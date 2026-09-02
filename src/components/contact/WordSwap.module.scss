@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+.root {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  white-space: nowrap;
+  // Sized by JS to the active word; this is the pre-hydration fallback.
+  width: auto;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(100%);
+  transition:
+    opacity $dur $ease-out,
+    transform $dur $ease-out;
+
+  // First word keeps the box in flow before JS measures it.
+  &:first-child { position: relative; }
+  &:not(:first-child) { position: absolute; top: 0; left: 0; }
+
+  &.isActive { opacity: 1; transform: translateY(0); }
+}

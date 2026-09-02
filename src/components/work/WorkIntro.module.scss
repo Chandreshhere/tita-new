@@ -1,0 +1,53 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: $white;
+  padding-bottom: 6vh;
+}
+
+.gradient { position: absolute; inset: 0; z-index: 0; }
+
+.rulerLeft,
+.rulerRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: $white;
+  @include sm { display: none; }
+}
+.rulerLeft  { left: $page-padding; }
+.rulerRight { right: $page-padding; }
+
+.inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.title { display: block; }
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}
+
+.body {
+  padding-bottom: 0.6em;
+  @include sm { margin-top: 24px; }
+}
+
+.cue {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  @include sm { display: none; }
+}

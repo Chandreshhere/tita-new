@@ -1,0 +1,84 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  overflow: hidden;
+  color: $white;
+}
+
+// Fixed, so the gradient stays put while the hero scrolls away over it.
+.gradient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  display: block;
+  text-transform: none;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+
+  > span { display: block; }
+}
+
+// Line offsets from the reference stylesheet.
+.line0 { margin-left: 0; }
+.line1 { margin-left: 16.51vw; }
+.line2 { margin-left: 10.416vw; }
+
+@include sm {
+  .line1 { margin-left: 8vw; }
+  .line2 { margin-left: 4vw; }
+}
+
+.footWrap {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 35px;
+  overflow: hidden;
+  @include sm { padding-bottom: 30px; }
+}
+
+.foot { width: 100%; }
+
+.circles {
+  align-self: flex-end;
+  img { width: 64px; height: auto; }
+  @include sm { display: none; }
+}
+
+.item {
+  strong { display: block; font-weight: 600; }
+  @include sm {
+    display: none;
+    &:first-child { display: block; }
+  }
+}
+
+.itemSub {
+  display: block;
+  opacity: 0.5;
+}
+
+.scroll { margin-left: auto; }

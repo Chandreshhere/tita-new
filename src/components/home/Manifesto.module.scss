@@ -1,0 +1,56 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  z-index: 1;
+  padding-top: 16vh;
+  padding-bottom: 12vh;
+  color: $white;
+
+  // The manifesto is the one block that stays over the live gradient, so it
+  // carries its own scrim to keep the copy legible over the bright field.
+  &:before {
+    content: '';
+    position: absolute;
+    inset: -10vh 0 -6vh;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.72) 22%,
+      rgba(0, 0, 0, 0.72) 78%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
+  @include sm { padding-top: 70px; padding-bottom: 50px; }
+}
+
+.label {
+  position: sticky;
+  top: 18vh;
+  display: block;
+  opacity: 0.5;
+  @include md { position: static; margin-bottom: 24px; }
+}
+
+.title { display: block; }
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}
+
+// Alternating indent gives the block the reference's staggered rhythm.
+.indent {
+  margin-left: 12vw;
+  @include sm { margin-left: 5vw; }
+}
+
+.body {
+  margin-top: 10vh;
+  @include sm { margin-top: 44px; }
+  p { opacity: 0.75; }
+}

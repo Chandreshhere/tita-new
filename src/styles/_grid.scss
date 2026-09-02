@@ -1,0 +1,61 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// ─── 24 column fluid grid ─────────────────────────────────────────────────────
+// Reproduces the original `col-{n}of{d}` / `offset-{n}of{d}` API, including the
+// `-md` and `-sm` responsive variants, so the captured markup ports over 1:1.
+
+.container {
+  @include container;
+}
+
+.row {
+  @include row;
+
+  &.middle  { align-items: center; }
+  &.bottom  { align-items: flex-end; }
+  &.stretch { align-items: stretch; }
+  &.center  { justify-content: center; }
+  &.between { justify-content: space-between; }
+}
+
+// Denominators actually used across the captured pages.
+$denoms: 24, 22, 20, 18, 17, 16, 15, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1;
+
+@mixin col-base {
+  padding: 0 $gutter;
+  @include md { padding: 0 $gutter-md; }
+}
+
+@each $d in $denoms {
+  @for $n from 0 through $d {
+    .col-#{$n}of#{$d} {
+      @include col-base;
+      width: math.percentage(math.div($n, $d));
+    }
+    .offset-#{$n}of#{$d} {
+      margin-left: math.percentage(math.div($n, $d));
+    }
+  }
+}
+
+@include md {
+  @each $d in $denoms {
+    @for $n from 0 through $d {
+      .col-md-#{$n}of#{$d}    { width: math.percentage(math.div($n, $d)); }
+      .offset-md-#{$n}of#{$d} { margin-left: math.percentage(math.div($n, $d)); }
+    }
+  }
+  .offset-md-0 { margin-left: 0; }
+}
+
+@include sm {
+  @each $d in $denoms {
+    @for $n from 0 through $d {
+      .col-sm-#{$n}of#{$d}    { width: math.percentage(math.div($n, $d)); }
+      .offset-sm-#{$n}of#{$d} { margin-left: math.percentage(math.div($n, $d)); }
+    }
+  }
+  .offset-sm-0 { margin-left: 0; }
+}

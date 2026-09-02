@@ -1,0 +1,60 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+  @include sm { padding-top: 60px; padding-bottom: 60px; }
+}
+
+.info {
+  position: sticky;
+  top: 18vh;
+  display: block;
+  opacity: 0.5;
+  @include md { position: static; margin-bottom: 20px; }
+}
+
+.title { text-transform: uppercase; }
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}
+
+.content {
+  margin-top: 8vh;
+  @include sm { margin-top: 40px; }
+}
+
+.justify {
+  display: block;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.quote { @include sm { margin-top: 40px; } }
+
+.author {
+  margin-top: 24px;
+  opacity: 0.6;
+}
+
+.side { @include sm { margin-top: 40px; } }
+
+.sideLink { margin-bottom: 20px; }
+
+.sideImg { width: 100%; }
+
+.credits {
+  display: block;
+  margin-top: 12px;
+  opacity: 0.4;
+}
+
+.wide {
+  width: 100%;
+  margin-top: 10vh;
+  @include sm { margin-top: 48px; }
+}

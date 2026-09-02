@@ -1,0 +1,27 @@
+{
+  "name": "monopo-london-clone",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.11",
+    "next": "^15.5.24",
+    "pixi.js": "^8.6.6",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "swiper": "^11.2.10"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "sass": "^1.83.0",
+    "typescript": "^5.7"
+  }
+}

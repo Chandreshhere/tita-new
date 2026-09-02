@@ -1,0 +1,19 @@
+.root {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+}
+
+// When no `ratio` is supplied the parent decides the box and we simply fill it.
+.root:not([style]) { height: 100%; }
+
+.inner {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+}
+
+.img {
+  object-fit: cover;
+  object-position: center;
+}

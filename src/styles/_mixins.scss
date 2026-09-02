@@ -1,0 +1,83 @@
+@use 'sass:math';
+@use 'variables' as *;
+
+@mixin sm  { @media only screen and (max-width: #{$bp-sm}) { @content; } }
+@mixin md  { @media only screen and (max-width: #{$bp-md}) { @content; } }
+@mixin lg  { @media only screen and (min-width: #{$bp-lg + 1px}) { @content; } }
+@mixin hover { @media (hover: hover) and (pointer: fine) { &:hover { @content; } } }
+@mixin reduced-motion { @media (prefers-reduced-motion: reduce) { @content; } }
+
+// The original sizes type in vw with a px floor: font-size: max(5.98vw, 47px)
+@mixin fluid-size($vw, $min) {
+  font-size: max(#{$vw}vw, #{$min}px);
+}
+
+// Longhands, not the `padding` shorthand: component modules layer their own
+// vertical padding on `.container` elements and a shorthand would reset it.
+@mixin container {
+  padding-left: $page-padding;
+  padding-right: $page-padding;
+  max-width: 100%;
+  width: 100%;
+  @include md { padding-left: $page-padding-md; padding-right: $page-padding-md; }
+  @include sm { padding-left: $page-padding-sm; padding-right: $page-padding-sm; }
+}
+
+@mixin row {
+  display: flex;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+  flex-wrap: wrap;
+  flex-direction: row;
+  min-width: 100%;
+  @include md {
+    margin-left: -$gutter-md;
+    margin-right: -$gutter-md;
+  }
+}
+
+// A single column of an `of` wide sub-grid.
+@mixin col($span, $of: 24) {
+  padding: 0 $gutter;
+  width: percentage(math.div($span, $of));
+  @include md { padding: 0 $gutter-md; }
+}
+
+// Ruler tick motif (c-*-ruler) shared by Home / Works / Contact / IntroGradient
+@mixin ruler($colour: $white) {
+  position: relative;
+  padding-left: 15px;
+
+  .cm {
+    position: relative;
+    width: 6px;
+    margin-top: 16px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 1px;
+      background: $colour;
+    }
+    &:first-child { margin-top: 0; }
+    &:first-child .mm:first-child { margin-top: 0; }
+  }
+  .mm {
+    width: 2px;
+    height: 1px;
+    background: $colour;
+    margin-top: 16px;
+  }
+  .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 5px solid $colour;
+    margin-top: -3px;
+    transition: transform $dur-slow $ease-out;
+  }
+}

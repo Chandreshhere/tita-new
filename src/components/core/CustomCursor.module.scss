@@ -1,0 +1,44 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: $z-cursor;
+  will-change: transform;
+
+  @include sm { display: none; }
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10.4vw;
+  height: 10.4vw;
+  margin-left: -5.2vw;
+  margin-top: -5.2vw;
+  background: $white;
+  color: $black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  @include fluid-size(0.6770833333, 12);
+  line-height: 1.4;
+  transform: scale(0) translateZ(0);
+}
+
+.label { display: none; }
+
+.root[data-state='case']     .case,
+.root[data-state='project']  .project,
+.root[data-state='discover'] .discover { display: block; }

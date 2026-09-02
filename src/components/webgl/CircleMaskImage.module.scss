@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  overflow: hidden;
+  // Driven by GSAP: 0% → 150% opens the circular mask.
+  --mask: 0%;
+}
+
+.mask {
+  position: absolute;
+  inset: 0;
+  clip-path: circle(var(--mask) at 50% 50%);
+  will-change: clip-path;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
+  transition: transform $dur $ease-out;
+}
+
+.isLoaded .img { opacity: 1; }
+
+.hover {
+  opacity: 0;
+  transition: opacity $dur $ease-out, transform $dur $ease-out;
+}
+
+.root:hover {
+  .hover { opacity: 1; }
+  @include hover { .img { transform: scale(1.05); } }
+}

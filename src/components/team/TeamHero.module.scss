@@ -1,0 +1,29 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.title { display: block; text-align: left; }
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}
+
+.line0 { margin-left: 0; }
+.line1 { margin-left: 14vw; }
+.line2 { margin-left: 6vw; }
+@include sm {
+  .line1 { margin-left: 7vw; }
+  .line2 { margin-left: 3vw; }
+}
+
+.info { opacity: 0.7; }
+
+.text { @include sm { display: none; } }
+
+.cue {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  @include sm { display: none; }
+}

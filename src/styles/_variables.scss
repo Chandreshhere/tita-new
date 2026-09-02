@@ -1,0 +1,37 @@
+// ─── Design tokens ────────────────────────────────────────────────────────────
+// Values lifted directly from the captured monopo.london stylesheet.
+
+// Colours
+$black:        #000;
+$white:        #fff;
+$grey:         #7f7f7f;   // secondary text / inactive nav
+$grey-dark:    #666970;   // footer body copy
+$grey-mid:     #999;
+$red:          red;       // form error
+
+// Breakpoints (the original uses max-width queries at these exact values)
+$bp-sm: 767px;   // mobile
+$bp-md: 979px;   // tablet
+$bp-lg: 1440px;  // large desktop
+
+// Grid — the original is a 24 column grid with vw based gutters
+$grid-columns: 24;
+$gutter:        0.54vw;   // half-gutter, applied as horizontal padding on columns
+$gutter-md:     6px;
+$page-padding:      3.9vw;
+$page-padding-md:   24px;
+$page-padding-sm:   3.65vw;
+
+// Motion — the site uses two easing curves almost exclusively
+$ease-out:   cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-in:    cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$ease-inout: cubic-bezier(0.77, 0, 0.175, 1);
+$dur:      0.6s;
+$dur-slow: 0.8s;
+
+// Layers
+$z-cursor:     9999;
+$z-transition: 9998;
+$z-nav:        1000;
+$z-header:     900;
+$z-cookies:    1001;

@@ -1,0 +1,57 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  padding-top: 12vh;
+  padding-bottom: 14vh;
+  background: $white;
+  color: $black;
+  @include sm { padding-top: 60px; padding-bottom: 60px; }
+}
+
+.info {
+  position: sticky;
+  top: 18vh;
+  display: block;
+  color: $grey;
+  @include md { position: static; margin-bottom: 20px; }
+}
+
+.title { margin-bottom: 8vh; }
+
+.justify { color: $grey; }
+
+.table {
+  li { border-top: 1px solid rgba(0, 0, 0, 0.15); }
+  li:last-child { border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+}
+
+.row {
+  display: block;
+  padding: 22px 0;
+  color: inherit;
+  text-decoration: none;
+  transform: translateZ(0);
+  transition: transform $dur $ease-out;
+
+  @include hover { transform: translateX(10px) translateZ(0); }
+  @include sm { padding: 16px 0; }
+}
+
+.date { color: $grey; }
+
+.project {
+  color: $grey;
+  // Process copy runs long — drop the uppercase tracking the table uses.
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  @include sm { margin-top: 4px; }
+}
+
+.arrow {
+  text-align: right;
+  transition: transform $dur $ease-out;
+  .row:hover & { transform: translate(3px, -3px); }
+}

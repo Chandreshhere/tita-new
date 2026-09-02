@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 17px;
+  color: inherit;
+}
+
+.track {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+// Light sections need the inverse track colour.
+:global(body:not(.is-index):not(.is-work):not(.is-team)) .track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: currentColor;
+  animation: scrollCue 2.4s $ease-inout infinite;
+}
+
+.arrow {
+  font-size: 11px;
+  line-height: 1;
+}
+
+@keyframes scrollCue {
+  0%   { transform: translateY(-100%); }
+  60%  { transform: translateY(150%); }
+  100% { transform: translateY(150%); }
+}
+
+@include reduced-motion {
+  .thumb { animation: none; transform: translateY(30%); }
+}

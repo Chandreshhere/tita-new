@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background: $black;
+  z-index: $z-transition;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+  // The reference cross-fades this curtain (its own CSS animates opacity on
+  // `.is-active`), so opacity — not transform — is what GSAP drives here.
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  svg { fill: $white; }
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+}

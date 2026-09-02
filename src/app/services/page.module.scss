@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+// `c-PixiColor .c-Services-black` — the inverted bands the page alternates into.
+.dark {
+  background: $black;
+  color: $white;
+}

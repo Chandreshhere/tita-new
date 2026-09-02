@@ -1,0 +1,52 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  @include sm { padding-top: 50px; padding-bottom: 50px; }
+}
+
+// Sticky year marker with the timeline rule running beside it.
+.year {
+  position: sticky;
+  top: 20vh;
+  display: block;
+  padding-left: 16px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 8px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  @include md { position: static; margin-bottom: 24px; }
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 6vh;
+  @include sm { margin-bottom: 32px; }
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}
+
+.founders {
+  li { margin-top: 4px; }
+  @include sm { margin-bottom: 24px; }
+}
+
+.body { opacity: 0.7; }
+
+.img {
+  width: 100%;
+  @include sm { margin-top: 40px; }
+}

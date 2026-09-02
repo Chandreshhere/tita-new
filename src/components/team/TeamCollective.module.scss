@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  padding-top: 14vh;
+  padding-bottom: 12vh;
+  background: $black;
+  color: $white;
+  @include sm { padding-top: 60px; padding-bottom: 60px; }
+}
+
+.title { text-transform: uppercase; }
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}
+
+.line0 { margin-left: 0; }
+.line1 { margin-left: 18vw; }
+.line2 { margin-left: 6vw; }
+.line3 { margin-left: 24vw; }
+
+@include sm {
+  .line1 { margin-left: 8vw; }
+  .line2 { margin-left: 3vw; }
+  .line3 { margin-left: 10vw; }
+}
+
+.foot { margin-top: 8vh; }
+
+.baseline { opacity: 0.5; }

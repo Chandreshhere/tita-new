@@ -1,0 +1,46 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: fixed;
+  bottom: 45px;
+  right: $page-padding;
+  width: 30%;
+  background: $black;
+  color: $white;
+  z-index: $z-cookies;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40%) translateZ(0);
+  transition:
+    transform $dur-slow $ease-inout,
+    opacity $dur-slow $ease-inout,
+    visibility $dur-slow $ease-inout;
+
+  @include md { width: 46%; }
+  @include sm { right: 0; bottom: 0; width: 100%; }
+
+  &.isActive {
+    opacity: 1;
+    visibility: visible;
+    transform: translateZ(0);
+    transition:
+      transform $dur-slow $ease-out,
+      opacity $dur-slow $ease-out,
+      visibility $dur-slow $ease-out;
+  }
+}
+
+.inner {
+  width: 100%;
+  padding: 2.4vw 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  @include sm { padding: 9.33vw 7.33vw; flex-direction: column; align-items: flex-start; }
+}
+
+.desc a { font-weight: 400; text-decoration: underline; color: inherit; }
+
+.btn { flex-shrink: 0; }

@@ -1,0 +1,53 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root { position: relative; }
+
+.content {
+  position: relative;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  &:focus-visible { outline: 1px solid currentColor; outline-offset: 6px; }
+}
+
+.canvasHost {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity $dur-slow $ease-out;
+
+  &.isActive { opacity: 1; }
+  // Once WebGL is live the DOM images stay for a11y but stop painting.
+  &.isHidden { opacity: 0; }
+}
+
+// Prev/next are the two halves of the image, as on the reference.
+.prev, .next {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  &:focus-visible { outline: 1px solid $white; outline-offset: -4px; }
+}
+.prev { left: 0; }
+.next { right: 0; }
+
+.legend {
+  color: $grey;
+  margin-top: 12px;
+}

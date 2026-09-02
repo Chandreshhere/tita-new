@@ -1,0 +1,144 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: $black;
+  color: $white;
+}
+
+.inner {
+  position: relative;
+  display: block;
+  padding-top: 85px;
+  padding-bottom: 25px;
+  will-change: transform;
+  @include md { padding-top: 60px; }
+  @include sm { padding-top: 50px; padding-bottom: 20px; }
+}
+
+.head {
+  margin-bottom: 20px;
+  @include sm { margin-bottom: 10px; }
+}
+
+.circles {
+  width: 64px;
+  height: auto;
+  @include sm { width: 44px; }
+}
+
+.title {
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.gray { color: $grey-dark; }
+
+.contact {
+  display: inline-block;
+  margin-top: 40px;
+  color: inherit;
+  text-decoration: none;
+  @include sm { margin-top: 15px; }
+
+  @include hover { .contactIcon { transform: translateX(5px) translateZ(0); } }
+}
+
+.contactIcon {
+  display: inline-block;
+  transform: translateZ(0);
+  transition: transform $dur $ease-out;
+}
+
+.subtitle { margin-bottom: 15px; }
+
+.column { @include sm { margin-top: 50px; } }
+
+.socials {
+  display: flex;
+  margin-bottom: 25px;
+  li { margin-right: 17px; }
+}
+
+.socialsLink {
+  color: $grey;
+  text-decoration: none;
+  transition: color $dur $ease-out;
+  @include hover { color: $white; }
+}
+
+.externals {
+  li { margin-top: 16px; }
+  li:first-child { margin-top: 0; }
+}
+
+.nav {
+  li { margin-top: 16px; }
+  li:first-child { margin-top: 0; }
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  color: $grey;
+  text-decoration: none;
+  transition: color $dur $ease-out;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 5px solid $white;
+    margin-right: 7px;
+    opacity: 0;
+    transition: opacity $dur $ease-out;
+  }
+
+  @include hover { color: $white; &:before { opacity: 1; } }
+}
+
+.foot {
+  margin-top: 200px;
+  @include md { margin-top: 100px; }
+  @include sm { margin-top: 50px; }
+}
+
+.footInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.top {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: inherit;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid $white;
+    border-radius: 50%;
+    transform: translateZ(0);
+    transition: transform $dur $ease-out;
+  }
+  @include hover { &:before { transform: scale(1.1) translateZ(0); } }
+
+  @include md {
+    width: auto;
+    height: auto;
+    &:before { display: none; }
+  }
+}

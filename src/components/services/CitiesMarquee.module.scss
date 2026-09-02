@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  overflow: hidden;
+  padding: 8vh 0;
+  white-space: nowrap;
+  @include sm { padding: 40px 0; }
+}
+
+.band {
+  display: inline-block;
+  text-transform: uppercase;
+  white-space: nowrap;
+  will-change: transform;
+}

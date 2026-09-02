@@ -1,0 +1,158 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-header;
+  color: inherit;
+
+  &.inNav { position: relative; }
+}
+
+.container {
+  padding-top: 35px;
+  position: relative;
+  transform: translateZ(0);
+  @include sm { padding-top: 20px; }
+}
+
+.content { @include sm { height: 100%; } }
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+// The full studio name set as the mark, so the header reads
+// "This Is That Agency" rather than the TITA initialism.
+.wordmark {
+  display: inline-block;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  white-space: nowrap;
+  @include fluid-size(0.9375, 15);
+  @include sm {
+    letter-spacing: 0.1em;
+    @include fluid-size(3.2, 13);
+  }
+}
+
+.inner {
+  @include sm { display: none; }
+  > :global(.row) { height: 100%; }
+}
+
+.inNav .inner { opacity: 1 !important; transform: none !important; }
+
+.menu { @include sm { align-self: flex-end; } }
+
+.clocks {
+  @include sm {
+    order: -1;
+    margin-top: 46px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.clocksImg {
+  display: none;
+  @include sm { display: block; width: 44px; height: auto; }
+}
+
+.nav {
+  li { margin-top: 16px; }
+  li:first-child { margin-top: 0; }
+}
+
+.navAlt {
+  @include sm { li:first-child { margin-top: 16px; } }
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.5;
+  transform: translateZ(0);
+  transition: opacity $dur $ease-out;
+
+  // The small triangle that appears beside the current/hovered item.
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 0;
+    width: 0;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: 5px solid currentColor;
+    margin-right: 7px;
+    opacity: 0;
+    transition: opacity $dur $ease-out;
+  }
+
+  &.isActive { opacity: 1; &:before { opacity: 1; } }
+  @include hover { opacity: 1; &:before { opacity: 1; } }
+}
+
+.burger {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  color: inherit;
+  @include sm { display: none; }
+}
+
+.burgerLabel {
+  opacity: 1;
+  transition: opacity $dur $ease-out;
+  @include md { display: none; }
+}
+.isOpen .burgerLabel { opacity: 0; }
+
+.burgerIcon {
+  position: relative;
+  display: block;
+  height: 12px;
+  width: 38px;
+  margin-left: 12px;
+  @include sm { width: 28px; }
+}
+
+.burgerLine {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: currentColor;
+  transform: translateZ(0);
+  transition: transform $dur $ease-out;
+
+  &:first-child { left: 0; }
+  &:nth-child(2) { right: 0; }
+  &:nth-child(3) {
+    right: 7px;
+    transition: transform $dur $ease-out, opacity $dur $ease-out;
+  }
+}
+
+.isOpen {
+  .burgerLine:first-child { transform: translateX(18px) rotate(45deg); }
+  .burgerLine:nth-child(2) { transform: translateX(-19px) rotate(-45deg); }
+  .burgerLine:nth-child(3) { opacity: 0; transition: transform $dur $ease-out, opacity 0s; }
+
+  @include sm {
+    .burgerLine:first-child { transform: translateX(13px) rotate(45deg); }
+    .burgerLine:nth-child(2) { transform: translateX(-14px) rotate(-45deg); }
+  }
+}

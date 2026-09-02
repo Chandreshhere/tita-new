@@ -1,0 +1,65 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  padding-top: 14vh;
+  padding-bottom: 14vh;
+  background: $white;
+  color: $black;
+  @include sm { padding-top: 60px; padding-bottom: 60px; }
+}
+
+.label {
+  position: sticky;
+  top: 18vh;
+  color: $grey;
+  @include md { position: static; margin-bottom: 24px; }
+}
+
+.btn { margin-top: 40px; }
+
+.points {
+  margin-top: 14vh;
+  @include sm { margin-top: 60px; }
+}
+
+.item {
+  @include sm { margin-top: 48px; }
+
+  ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    transition: padding-left $dur $ease-out;
+    @include hover { padding-left: 10px; }
+  }
+}
+
+.itemHead {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid $black;
+}
+
+.number {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  @include fluid-size(0.6770833333, 12);
+  color: $grey;
+}
+
+.itemLabel { font-weight: 600; }
+
+.subtitle {
+  color: $grey;
+  margin-bottom: 14px;
+}
+
+.description {
+  margin-bottom: 26px;
+  opacity: 0.75;
+}

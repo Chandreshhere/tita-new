@@ -1,0 +1,30 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root { width: 100%; }
+
+.info { margin-bottom: 8vh; @include sm { margin-bottom: 40px; } }
+
+.infoTitle { margin-bottom: 16px; }
+
+.content { margin-bottom: 40px; }
+
+.line { position: relative; }
+
+.textarea { min-height: 200px; }
+
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  &[disabled] { opacity: 0.5; cursor: progress; }
+}
+
+.status { margin: 0; }
+
+.valid { color: $black; }
+.error { color: $red; }

@@ -1,0 +1,110 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  background: $black;
+  color: $white;
+  padding-bottom: 12vh;
+}
+
+.hero {
+  min-height: 72vh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 24vh;
+  padding-bottom: 8vh;
+  @include sm { padding-top: 140px; padding-bottom: 40px; min-height: 0; }
+}
+
+.back {
+  position: sticky;
+  top: 20vh;
+  @include md { position: static; margin-bottom: 24px; }
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0.5;
+  margin-bottom: 20px;
+
+  li {
+    display: flex;
+    align-items: center;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 3px;
+      width: 3px;
+      background: currentColor;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+    &:first-child:before { content: none; }
+  }
+}
+
+.title { text-transform: uppercase; }
+
+.line {
+  display: block;
+  overflow: hidden;
+  > span { display: block; }
+}
+
+.cue {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  @include sm { display: none; }
+}
+
+// The client mark on a large translucent field, as TITA presents its work.
+.mark {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+
+.next {
+  margin-top: 16vh;
+  @include sm { margin-top: 60px; }
+}
+
+.nextLabel { opacity: 0.5; }
+
+.nextLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity $dur $ease-out;
+  @include hover { opacity: 0.6; }
+}
+
+// The project thumbnail, above the client mark and the write-up.
+.thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.blurb {
+  margin-top: 36px;
+  opacity: 0.6;
+  max-width: 52ch;
+}
+
+.visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}

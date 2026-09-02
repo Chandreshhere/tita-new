@@ -1,0 +1,176 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  width: 100%;
+  // Transparent on purpose: the hero's fixed gradient canvas shows through the
+  // whole stack, and its palette morphs per project as you scroll.
+  background: transparent;
+  color: $white;
+}
+
+.sticky {
+  position: relative;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  // Mobile stacks the image above the copy instead of layering them.
+  @include sm {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-top: 88px;
+  }
+}
+
+.images {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+
+  @include sm {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    flex: 0 0 auto;
+  }
+}
+
+// The window the drum turns behind. Aspect is the reference's 62.526%.
+.frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.drum {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+// Each slide fills the frame exactly, stacked one full height apart, so
+// translating the drum by -100% per step swaps one image for the next.
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@for $i from 1 through 8 {
+  .slide:nth-child(#{$i}) { transform: translateY(#{($i - 1) * 100%}); }
+}
+
+// Client mark centred on a translucent field, matching the portfolio grid.
+.mark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16% 20%;
+  // A dark panel, as TITA presents its portfolio — a translucent white field
+  // washes out against the gradient behind it.
+  background: rgba(8, 8, 8, 0.62);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.info {
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+
+  a, button { pointer-events: auto; }
+
+  @include sm { margin-top: 28px; }
+}
+
+.rulerCol { @include sm { display: none; } }
+
+.legend { opacity: 0.5; }
+
+.titles {
+  margin-top: 15px;
+  position: relative;
+  text-transform: uppercase;
+  // Reserve room for the tallest title so the column never jumps.
+  min-height: 9em;
+  @include sm { min-height: 7em; }
+}
+
+.titlesItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateZ(0);
+  transition:
+    transform 0.4s $ease-in,
+    opacity 0.4s $ease-in;
+
+  &.isActive {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+    transition:
+      transform $dur-slow $ease-out 0.4s,
+      opacity $dur-slow $ease-out 0.4s;
+  }
+  &.isPrev { transform: translateY(-40px) translateZ(0); }
+  &.isNext { transform: translateY(40px) translateZ(0); }
+}
+
+.title { text-transform: uppercase; }
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  opacity: 0.5;
+
+  li {
+    display: flex;
+    align-items: center;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 3px;
+      width: 3px;
+      background: currentColor;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+    &:first-child:before { content: none; }
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  // Inline with the copy on mobile rather than floating over the image.
+  @include sm { justify-content: flex-start; margin-top: 24px; }
+}
+
+.btn {
+  position: absolute;
+  bottom: 13vh;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  @include lg { bottom: 8vh; }
+  @include sm { bottom: 75px; }
+}

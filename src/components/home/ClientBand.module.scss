@@ -1,0 +1,51 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  z-index: 1;
+  padding-top: 10vh;
+  padding-bottom: 12vh;
+  color: $white;
+  @include sm { padding-top: 44px; padding-bottom: 50px; }
+}
+
+.label {
+  position: sticky;
+  top: 18vh;
+  display: block;
+  opacity: 0.5;
+  @include md { position: static; margin-bottom: 24px; }
+}
+
+.title { margin-bottom: 8vh; @include sm { margin-bottom: 36px; } }
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include sm { grid-template-columns: repeat(2, 1fr); }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+
+  &:nth-child(3n + 1) { border-left: 0; }
+  @include sm { &:nth-child(3n + 1) { border-left: 1px solid rgba(255,255,255,.18); } }
+  @include sm { &:nth-child(2n + 1) { border-left: 0; } }
+
+  img {
+    max-width: 100%;
+    max-height: 46px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.75;
+    transition: opacity $dur $ease-out, transform $dur $ease-out;
+  }
+  @include hover { img { opacity: 1; transform: scale(1.05); } }
+}

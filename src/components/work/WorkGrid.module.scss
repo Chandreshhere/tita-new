@@ -1,0 +1,147 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.root {
+  position: relative;
+  padding-top: 12vh;
+  padding-bottom: 14vh;
+  background: $black;
+  color: $white;
+  @include sm { padding-top: 60px; padding-bottom: 60px; }
+}
+
+.filters {
+  position: sticky;
+  top: 18vh;
+  @include sm { position: static; margin-bottom: 40px; }
+}
+
+.ruler {
+  position: absolute;
+  top: 0;
+  left: -24px;
+  color: rgba(255, 255, 255, 0.5);
+  @include md { display: none; }
+}
+
+.filtersList {
+  @include sm { display: none; }
+  li { margin-top: 14px; }
+  li:first-child { margin-top: 0; }
+}
+
+.filterBtn {
+  color: inherit;
+  opacity: 0.4;
+  text-align: left;
+  transition: opacity $dur $ease-out;
+  @include hover { opacity: 1; }
+  &.isActive { opacity: 1; }
+}
+
+.select {
+  display: none;
+  @include sm { display: block; }
+  select { color: $white; border-bottom-color: rgba(255, 255, 255, 0.3); }
+  option { color: $black; }
+  &:after { color: $white; }
+}
+
+.item {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 9vh;
+  will-change: transform, opacity;
+  @include sm { margin-bottom: 48px; }
+}
+
+.parallax { will-change: transform; }
+
+// Client mark centred on a dark field, as TITA presents its portfolio.
+.mark {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+  transition: background $dur $ease-out, border-color $dur $ease-out;
+
+  .item:hover & {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+.info { margin-top: 18px; }
+
+// The project thumbnail fills the card.
+.thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $dur $ease-out;
+  .item:hover & { transform: scale(1.03); }
+}
+
+// The client's own mark, over the thumbnail.
+.badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  width: auto;
+  height: 34px;
+  max-width: 45%;
+  padding: 7px 11px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  img { max-height: 100%; }
+  span { font-size: 11px; letter-spacing: 0.06em; }
+}
+
+.blurb {
+  opacity: 0.45;
+  margin-top: 12px;
+  max-width: 46ch;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0.5;
+  margin-top: 10px;
+
+  li {
+    display: flex;
+    align-items: center;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 3px;
+      width: 3px;
+      background: currentColor;
+      border-radius: 50%;
+      margin: 0 10px;
+    }
+    &:first-child:before { content: none; }
+  }
+}
+
+.title {
+  transition: opacity $dur $ease-out;
+  .item:hover & { opacity: 0.6; }
+}
+
+.count {
+  opacity: 0.4;
+  margin-top: 8px;
+}
