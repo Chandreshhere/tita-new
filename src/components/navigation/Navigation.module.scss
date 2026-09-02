@@ -11,6 +11,9 @@
   inset: 0;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
+  // `svh` is the viewport with the mobile chrome showing, so it does not
+  // change as the URL bar hides — the block stays one height throughout.
+  height: 100svh;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
@@ -23,6 +26,9 @@
   width: 100%;
   max-height: 100vh;
   max-height: calc(var(--vh, 1vh) * 100);
+  // `svh` is the viewport with the mobile chrome showing, so it does not
+  // change as the URL bar hides — the block stays one height throughout.
+  max-height: 100svh;
   overflow-y: auto;
   overscroll-behavior: contain;
   background: $black;

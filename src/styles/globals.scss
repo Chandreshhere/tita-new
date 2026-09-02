@@ -25,8 +25,9 @@
   --ease-out: #{$ease-out};
   --transition: #{$dur} #{$ease-out};
 
-  // Live viewport height, kept in sync by SmoothScrollProvider so mobile browser
-  // chrome doesn't cause 100vh jumps mid-scroll.
+  // Viewport height for browsers without `svh`. SmoothScrollProvider only
+  // refreshes it when the viewport *width* changes, so the mobile URL bar
+  // sliding away no longer resizes every full-height block mid-scroll.
   --vh: 1vh;
 }
 
@@ -36,6 +37,10 @@ html {
   overflow-y: scroll;
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: auto;
+  // Keeps the rubber-band at the ends of the page from chaining to the browser
+  // itself — that overscroll is what pulls the mobile chrome back in and out,
+  // and with it pull-to-refresh firing on an upward flick at the top.
+  overscroll-behavior-y: none;
 }
 
 body {

@@ -15,6 +15,9 @@
   position: relative;
   min-height: 100vh;
   min-height: calc(var(--vh, 1vh) * 100);
+  // `svh` is the viewport with the mobile chrome showing, so it does not
+  // change as the URL bar hides — the block stays one height throughout.
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;

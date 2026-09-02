@@ -69,19 +69,35 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
     gsap.ticker.add(raf)
     gsap.ticker.lagSmoothing(0)
 
-    // Mobile browser chrome resizes the viewport mid-scroll; a CSS var keeps
-    // 100vh-derived heights honest without triggering layout thrash.
+    // Mobile browser chrome hiding and reappearing fires `resize` with a new
+    // innerHeight, and recomputing --vh on every one of those made each
+    // 100vh-derived block grow and shrink under the finger — the page visibly
+    // shifting as you scrolled. That also changes the document height, which can
+    // set the chrome toggling again.
+    //
+    // The URL bar never changes the viewport *width*, so width is the signal for
+    // a resize worth reacting to: a rotation, a desktop window drag, a keyboard.
+    // Height-only changes are ignored and the layout stays put.
+    let lastWidth = window.innerWidth
     const setVh = () => {
       document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
     }
+    const onResize = () => {
+      if (window.innerWidth === lastWidth) return
+      lastWidth = window.innerWidth
+      setVh()
+      ScrollTrigger.refresh()
+    }
     setVh()
-    window.addEventListener('resize', setVh)
+    window.addEventListener('resize', onResize)
+    window.addEventListener('orientationchange', setVh)
 
     setReady(true)
 
     return () => {
       gsap.ticker.remove(raf)
-      window.removeEventListener('resize', setVh)
+      window.removeEventListener('resize', onResize)
+      window.removeEventListener('orientationchange', setVh)
       lenis.destroy()
       lenisRef.current = null
     }
