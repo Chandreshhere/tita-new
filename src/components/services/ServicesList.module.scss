@@ -24,11 +24,17 @@
   @include sm { margin-top: 60px; }
 }
 
-.item {
-  @include sm { margin-top: 48px; }
+.item { @include sm { margin-top: 48px; } }
 
-  ul li {
-    padding: 14px 0;
+// The disciplines are a list, not a run of headlines: at the previous `t-h4`
+// step half of them wrapped onto a second line inside a six-column well, which
+// is most of why this section read as clutter.
+.itemList {
+  text-transform: uppercase;
+  font-weight: 500;
+
+  li {
+    padding: 12px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     transition: padding-left $dur $ease-out;
     @include hover { padding-left: 10px; }
@@ -52,7 +58,7 @@
   color: $grey;
 }
 
-.itemLabel { font-weight: 600; }
+.itemLabel { margin-left: 4px; }
 
 .subtitle {
   color: $grey;

@@ -33,9 +33,12 @@
   opacity: 0.6;
 }
 
-// The right column has no caption above it, so it starts level with the copy
-// on the left rather than with the caption.
-.second { @include md { margin-top: 28px; } }
+// The right column has no caption above it, so it is nudged down by the height
+// of one to start level with the copy on the left rather than with the caption.
+.second {
+  margin-top: 38px;
+  @include sm { margin-top: 24px; }
+}
 
 .quotes {
   margin-top: 8vh;

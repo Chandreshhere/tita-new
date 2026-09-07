@@ -17,7 +17,7 @@
   @include md { position: static; margin-bottom: 20px; }
 }
 
-.title { margin-bottom: 8vh; }
+.title { margin-bottom: 8vh; @include sm { margin-bottom: 40px; } }
 
 .justify { color: $grey; }
 
@@ -42,6 +42,7 @@
 
 .project {
   color: $grey;
+  @include md { margin-top: 6px; }
   // Process copy runs long — drop the uppercase tracking the table uses.
   text-transform: none;
   letter-spacing: normal;

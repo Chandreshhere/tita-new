@@ -44,20 +44,20 @@ export function Awards() {
       </div>
 
       <div className="row">
-        <div className="col-4of24 offset-2of24 offset-md-0 col-sm-8of12 offset-sm-0">
+        <div className="col-6of24 offset-2of24 offset-md-0 col-md-24of24 col-sm-12of12 offset-sm-0">
           <p className={`${styles.justify} t-text--sm`}>[ RESEARCH · DESIGN · IMPLEMENT ]</p>
         </div>
 
-        <div className="col-13of24 offset-3of24 col-md-18of24 offset-md-2of24 col-sm-12of12 offset-sm-0">
+        <div className="col-16of24 col-md-24of24 col-sm-12of12">
           <ul className={`${styles.table} t-list`}>
             {processSteps.map((step) => (
               <li key={step.number} data-row>
                 <div className={`${styles.row} t-h6`}>
-                  <div className="row middle">
+                  <div className="row">
                     <div className={`${styles.date} col-2of13 col-sm-12of12 t-h6--spacing`}>
                       {step.number}
                     </div>
-                    <div className="col-10of13 col-sm-10of12">
+                    <div className="col-11of13 col-sm-12of12">
                       <div className="row">
                         <div className="t-h6--spacing col-5of10 col-sm-12of12">
                           {step.title}

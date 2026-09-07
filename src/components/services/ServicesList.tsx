@@ -63,11 +63,11 @@ export function ServicesList() {
                 <div className={styles.item} data-reveal>
                   <div className={styles.itemHead}>
                     <span className={styles.number}>{group.number}</span>
-                    <h2 className={`${styles.itemLabel} t-h5 t-h5--display`}>{group.title}</h2>
+                    <h2 className={`${styles.itemLabel} t-h4 t-h4--display`}>{group.title}</h2>
                   </div>
                   <p className={`${styles.subtitle} t-text--sm`}>{group.subtitle}</p>
                   <p className={`${styles.description} t-text`}>{group.description}</p>
-                  <ul className="t-list t-h4">
+                  <ul className={`${styles.itemList} t-list t-h5`}>
                     {group.items.map((item) => (
                       <li key={item}>{item}</li>
                     ))}

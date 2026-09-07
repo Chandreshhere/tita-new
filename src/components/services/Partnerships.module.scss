@@ -56,8 +56,8 @@
 // Marks supplied as white artwork. Inverting is what makes them visible here,
 // so hover raises the opacity rather than dropping the filter — dropping it
 // would put a white mark back on a white cell.
-.invert img {
-  filter: grayscale(1) invert(1);
-  .item:hover & { filter: grayscale(1) invert(1); }
-}
+.invert img { filter: grayscale(1) invert(1); }
+
+// Beats the `.item:hover img` rule above, which would otherwise drop the
+// inversion on hover and put a white mark back on a white cell.
 .invert:hover img { filter: grayscale(1) invert(1); opacity: 1; }
