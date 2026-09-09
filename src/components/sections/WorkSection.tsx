@@ -1,8 +1,8 @@
-// Verbatim markup from the Novasite template (`full home .zip`): the `section work` block — Work Process 01/02/03.
+// Verbatim markup from the Tita template (`full home .zip`): the `section work` block — Work Process 01/02/03.
 // Only the runtime artefacts of the capture were removed — SplitText's per-letter
 // divs, GSAP/IX2 inline styles and the widget state Webflow's runtime rebuilds.
-// Styling comes from `src/styles/novasite.css`; motion from the Webflow IX2 runtime.
-export function NovasiteWork() {
+// Styling comes from `src/styles/tita-sections.css`; motion from the Webflow IX2 runtime.
+export function WorkSection() {
   return (
     <section className="section work" data-w-id="812be99e-2ff0-331f-f6c0-991449e43524">
       <div className="w-layout-blockcontainer container w-container">

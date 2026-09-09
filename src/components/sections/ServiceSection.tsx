@@ -1,8 +1,8 @@
-// Verbatim markup from the Novasite template (`full home .zip`): the `section service` block — eight hover-open Webflow dropdowns.
+// Verbatim markup from the Tita template (`full home .zip`): the `section service` block — eight hover-open Webflow dropdowns.
 // Only the runtime artefacts of the capture were removed — SplitText's per-letter
 // divs, GSAP/IX2 inline styles and the widget state Webflow's runtime rebuilds.
-// Styling comes from `src/styles/novasite.css`; motion from the Webflow IX2 runtime.
-export function NovasiteService() {
+// Styling comes from `src/styles/tita-sections.css`; motion from the Webflow IX2 runtime.
+export function ServiceSection() {
   return (
     <section className="section service" id="service">
       <div className="w-layout-blockcontainer container w-container">
@@ -35,7 +35,7 @@ export function NovasiteService() {
                   </div>
                   <div className="overflow-hidden">
                     <div className="plus-icon-wrap" data-w-id="e7e60534-b7d0-bc05-b9c0-fcbde34c555f">
-                      <img alt="" className="plus-icon" loading="lazy" src="/novasite/plus-icon.svg" />
+                      <img alt="" className="plus-icon" loading="lazy" src="/tita/plus-icon.svg" />
                     </div>
                   </div>
                 </div>
@@ -48,25 +48,25 @@ export function NovasiteService() {
                     </div>
                     <div className="hover-content-servises">
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Graphic Design & Illustration
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Content & Copywriting
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="Small Plus Icon" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="Small Plus Icon" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           New Brand Launch
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Rebranding
                         </div>
@@ -84,7 +84,7 @@ export function NovasiteService() {
                   </div>
                   <div className="overflow-hidden">
                     <div className="plus-icon-wrap" data-w-id="5cfb2754-cfa4-8360-9f8c-0c3ccd5cf18c">
-                      <img alt="" className="plus-icon" loading="lazy" src="/novasite/plus-icon.svg" />
+                      <img alt="" className="plus-icon" loading="lazy" src="/tita/plus-icon.svg" />
                     </div>
                   </div>
                 </div>
@@ -97,25 +97,25 @@ export function NovasiteService() {
                     </div>
                     <div className="hover-content-servises">
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Social Media Marketing
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Campaign Planning
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Editing & Animation
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Film & Product Photography
                         </div>
@@ -133,7 +133,7 @@ export function NovasiteService() {
                   </div>
                   <div className="overflow-hidden">
                     <div className="plus-icon-wrap" data-w-id="7f4076a5-f077-87c4-249f-ccd9c674e982">
-                      <img alt="" className="plus-icon" loading="lazy" src="/novasite/plus-icon.svg" />
+                      <img alt="" className="plus-icon" loading="lazy" src="/tita/plus-icon.svg" />
                     </div>
                   </div>
                 </div>
@@ -146,25 +146,25 @@ export function NovasiteService() {
                     </div>
                     <div className="hover-content-servises">
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Web Personalisation & UI/UX
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Shopify Specialisation
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           E-commerce Ecosystems
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Email, Automations & Chatbots
                         </div>
@@ -182,7 +182,7 @@ export function NovasiteService() {
                   </div>
                   <div className="overflow-hidden">
                     <div className="plus-icon-wrap" data-w-id="ec22b64b-e64c-598a-5526-f77812f0a9d2">
-                      <img alt="" className="plus-icon" loading="lazy" src="/novasite/plus-icon.svg" />
+                      <img alt="" className="plus-icon" loading="lazy" src="/tita/plus-icon.svg" />
                     </div>
                   </div>
                 </div>
@@ -195,25 +195,25 @@ export function NovasiteService() {
                     </div>
                     <div className="hover-content-servises">
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Media Planning
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Performance Marketing
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           Google & YouTube Ads
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-red.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-red.svg" />
                         <div className="service-name">
                           LinkedIn Marketing
                         </div>
@@ -233,7 +233,7 @@ export function NovasiteService() {
                   </div>
                   <div className="overflow-hidden">
                     <div className="plus-icon-wrap" data-w-id="61f1aca9-24e8-c27e-c39c-7d9b7977d1c9">
-                      <img alt="" className="plus-icon" loading="lazy" src="/novasite/plus-icon.svg" />
+                      <img alt="" className="plus-icon" loading="lazy" src="/tita/plus-icon.svg" />
                     </div>
                   </div>
                 </div>
@@ -246,25 +246,25 @@ export function NovasiteService() {
                     </div>
                     <div className="hover-content-servises">
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Graphic Design & Illustration
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Content & Copywriting
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           New Brand Launch
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Rebranding
                         </div>
@@ -282,7 +282,7 @@ export function NovasiteService() {
                   </div>
                   <div className="overflow-hidden">
                     <div className="plus-icon-wrap" data-w-id="61f1aca9-24e8-c27e-c39c-7d9b7977d1e7">
-                      <img alt="" className="plus-icon" loading="lazy" src="/novasite/plus-icon.svg" />
+                      <img alt="" className="plus-icon" loading="lazy" src="/tita/plus-icon.svg" />
                     </div>
                   </div>
                 </div>
@@ -295,25 +295,25 @@ export function NovasiteService() {
                     </div>
                     <div className="hover-content-servises">
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Social Media Marketing
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Campaign Planning
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Editing & Animation
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Film & Product Photography
                         </div>
@@ -331,7 +331,7 @@ export function NovasiteService() {
                   </div>
                   <div className="overflow-hidden">
                     <div className="plus-icon-wrap" data-w-id="61f1aca9-24e8-c27e-c39c-7d9b7977d205">
-                      <img alt="" className="plus-icon" loading="lazy" src="/novasite/plus-icon.svg" />
+                      <img alt="" className="plus-icon" loading="lazy" src="/tita/plus-icon.svg" />
                     </div>
                   </div>
                 </div>
@@ -344,25 +344,25 @@ export function NovasiteService() {
                     </div>
                     <div className="hover-content-servises">
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Web Personalisation & UI/UX
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Shopify Specialisation
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           E-commerce Ecosystems
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Email, Automations & Chatbots
                         </div>
@@ -380,7 +380,7 @@ export function NovasiteService() {
                   </div>
                   <div className="overflow-hidden">
                     <div className="plus-icon-wrap" data-w-id="61f1aca9-24e8-c27e-c39c-7d9b7977d223">
-                      <img alt="" className="plus-icon" loading="lazy" src="/novasite/plus-icon.svg" />
+                      <img alt="" className="plus-icon" loading="lazy" src="/tita/plus-icon.svg" />
                     </div>
                   </div>
                 </div>
@@ -393,25 +393,25 @@ export function NovasiteService() {
                     </div>
                     <div className="hover-content-servises">
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Media Planning
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Performance Marketing
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           Google & YouTube Ads
                         </div>
                       </div>
                       <div className="service-name-wrap">
-                        <img alt="" className="service-plus-icon" loading="lazy" src="/novasite/service-plus-dark.svg" />
+                        <img alt="" className="service-plus-icon" loading="lazy" src="/tita/service-plus-dark.svg" />
                         <div className="service-name">
                           LinkedIn Marketing
                         </div>

@@ -7,7 +7,7 @@ import { homeProjects } from '@/data/projects'
 import { HOME_GRADIENT, PROJECT_GRADIENTS } from '@/data/gradients'
 import { useHomeGradient } from './HomeGradientContext'
 import { TransitionLink } from '@/components/core/TransitionLink'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { Ruler } from '@/components/ui/Ruler'
 import { ClientMark } from '@/components/work/ClientMark'
 import styles from './RecentWork.module.scss'
@@ -142,7 +142,7 @@ export function RecentWork() {
                     aria-hidden={i === active ? undefined : true}
                   >
                     <h2 className={`${styles.title} t-h3`}>
-                      <MonopoText>{project.title}</MonopoText>
+                      <TitaText>{project.title}</TitaText>
                     </h2>
                     <ul className={`${styles.categories} t-list t-h6 t-h6--spacing`}>
                       {project.categories.map((c) => (

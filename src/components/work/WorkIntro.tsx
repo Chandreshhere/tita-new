@@ -1,6 +1,6 @@
 import { WORK_GRADIENT } from '@/data/gradients'
 import { IntroGradient } from '@/components/ui/IntroGradient'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './WorkIntro.module.scss'
 
 const LINES = ['We paint', 'legacies, →', 'not posts']
@@ -40,7 +40,7 @@ export function WorkIntro() {
               {LINES.map((line, i) => (
                 <span className={`${styles.line} ${styles[`line${i}`]}`} key={line}>
                   <span data-line>
-                    <MonopoText>{line}</MonopoText>
+                    <TitaText>{line}</TitaText>
                   </span>
                 </span>
               ))}

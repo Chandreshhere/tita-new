@@ -6,7 +6,7 @@ import { gsap } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
 import { useSmoothScroll } from '@/components/core/SmoothScrollProvider'
 import { TransitionLink } from '@/components/core/TransitionLink'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { WorldClocks } from './WorldClocks'
 import { Header } from './Header'
 import { EXTERNAL_OFFICES, NAV_PRIMARY, NAV_SECONDARY, SOCIALS } from './nav-links'
@@ -200,7 +200,7 @@ export function Navigation() {
                         data-cursor="discover"
                       >
                         <span className={styles.linkInner}>
-                          <MonopoText>{link.label}</MonopoText>
+                          <TitaText>{link.label}</TitaText>
                         </span>
                       </TransitionLink>
                     </li>
@@ -231,7 +231,7 @@ export function Navigation() {
                 </div>
 
                 <div className={styles.asideBlock}>
-                  <h2 className={`${styles.asideTitle} t-h6`}>Monopo worldwide</h2>
+                  <h2 className={`${styles.asideTitle} t-h6`}>Our studios</h2>
                   <ul className="t-list">
                     {EXTERNAL_OFFICES.map((o) => (
                       <li key={o.href}>

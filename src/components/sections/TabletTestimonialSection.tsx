@@ -1,8 +1,8 @@
-// Verbatim markup from the Novasite template (`full home .zip`): the `section tablet-testimonial` block — the Webflow slider shown below 991px.
+// Verbatim markup from the Tita template (`full home .zip`): the `section tablet-testimonial` block — the Webflow slider shown below 991px.
 // Only the runtime artefacts of the capture were removed — SplitText's per-letter
 // divs, GSAP/IX2 inline styles and the widget state Webflow's runtime rebuilds.
-// Styling comes from `src/styles/novasite.css`; motion from the Webflow IX2 runtime.
-export function NovasiteTabletTestimonial() {
+// Styling comes from `src/styles/tita-sections.css`; motion from the Webflow IX2 runtime.
+export function TabletTestimonialSection() {
   return (
     <section className="section tablet-testimonial">
       <div className="w-layout-blockcontainer container w-container">
@@ -23,11 +23,11 @@ export function NovasiteTabletTestimonial() {
                   <div className="testimonial-slide-wrapper">
                     <div className="testimonial-wrap">
                       <div aria-hidden="true" className="rating-star-wrap">
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="Star Icon" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="Star Icon" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
                       </div>
                       <div className="testimonial-content-wrap">
                         <div className="testimonial-content-1">
@@ -40,7 +40,7 @@ export function NovasiteTabletTestimonial() {
                         </div>
                       </div>
                       <div className="testimonial-user-wrap">
-                        <img alt="" aria-hidden="true" className="testimonal-user-img" loading="lazy" src="/novasite/avatar-1.webp" />
+                        <img alt="" aria-hidden="true" className="testimonal-user-img" loading="lazy" src="/tita/avatar-1.webp" />
                         <div className="testimonial-user-name-tag">
                           <div className="testimonial-user-name">
                             The TITA Manifesto
@@ -57,11 +57,11 @@ export function NovasiteTabletTestimonial() {
                   <div className="testimonial-slide-wrapper">
                     <div className="testimonial-wrap">
                       <div className="rating-star-wrap">
-                        <img alt="" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
+                        <img alt="" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
                       </div>
                       <div className="testimonial-content-wrap">
                         <div className="testimonial-content-1">
@@ -74,7 +74,7 @@ export function NovasiteTabletTestimonial() {
                         </div>
                       </div>
                       <div className="testimonial-user-wrap">
-                        <img alt="" className="testimonal-user-img" loading="lazy" src="/novasite/avatar-2.webp" />
+                        <img alt="" className="testimonal-user-img" loading="lazy" src="/tita/avatar-2.webp" />
                         <div className="testimonial-user-name-tag">
                           <div className="testimonial-user-name">
                             The TITA Manifesto
@@ -91,11 +91,11 @@ export function NovasiteTabletTestimonial() {
                   <div className="testimonial-slide-wrapper">
                     <div className="testimonial-wrap">
                       <div aria-hidden="true" className="rating-star-wrap">
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
                       </div>
                       <div className="testimonial-content-wrap">
                         <div className="testimonial-content-1">
@@ -108,7 +108,7 @@ export function NovasiteTabletTestimonial() {
                         </div>
                       </div>
                       <div className="testimonial-user-wrap">
-                        <img alt="" aria-hidden="true" className="testimonal-user-img" loading="lazy" src="/novasite/avatar-3.webp" />
+                        <img alt="" aria-hidden="true" className="testimonal-user-img" loading="lazy" src="/tita/avatar-3.webp" />
                         <div className="testimonial-user-name-tag">
                           <div className="testimonial-user-name">
                             Chiaroscuro Marketing
@@ -125,11 +125,11 @@ export function NovasiteTabletTestimonial() {
                   <div className="testimonial-slide-wrapper">
                     <div className="testimonial-wrap">
                       <div aria-hidden="true" className="rating-star-wrap">
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
                       </div>
                       <div className="testimonial-content-wrap">
                         <div className="testimonial-content-1">
@@ -142,7 +142,7 @@ export function NovasiteTabletTestimonial() {
                         </div>
                       </div>
                       <div className="testimonial-user-wrap">
-                        <img alt="" aria-hidden="true" className="testimonal-user-img" loading="lazy" src="/novasite/avatar-4.webp" />
+                        <img alt="" aria-hidden="true" className="testimonal-user-img" loading="lazy" src="/tita/avatar-4.webp" />
                         <div className="testimonial-user-name-tag">
                           <div className="testimonial-user-name">
                             Art. Intelligence. Impact.
@@ -159,11 +159,11 @@ export function NovasiteTabletTestimonial() {
                   <div className="testimonial-slide-wrapper">
                     <div className="testimonial-wrap">
                       <div aria-hidden="true" className="rating-star-wrap">
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
-                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/novasite/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
+                        <img alt="" aria-hidden="true" className="rating-star" loading="lazy" src="/tita/rating-star.svg" />
                       </div>
                       <div className="testimonial-content-wrap">
                         <div className="testimonial-content-1">
@@ -176,7 +176,7 @@ export function NovasiteTabletTestimonial() {
                         </div>
                       </div>
                       <div className="testimonial-user-wrap">
-                        <img alt="" aria-hidden="true" className="testimonal-user-img" loading="lazy" src="/novasite/avatar-5.webp" />
+                        <img alt="" aria-hidden="true" className="testimonal-user-img" loading="lazy" src="/tita/avatar-5.webp" />
                         <div className="testimonial-user-name-tag">
                           <div className="testimonial-user-name">
                             Ghazal Somaiya & Naamdasi Patel

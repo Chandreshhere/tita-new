@@ -1,33 +1,33 @@
-// Verbatim markup from the Novasite template (`full home .zip`): the `section cta` block — the two counter-running marquees and the mail link.
+// Verbatim markup from the Tita template (`full home .zip`): the `section cta` block — the two counter-running marquees and the mail link.
 // Only the runtime artefacts of the capture were removed — SplitText's per-letter
 // divs, GSAP/IX2 inline styles and the widget state Webflow's runtime rebuilds.
-// Styling comes from `src/styles/novasite.css`; motion from the Webflow IX2 runtime.
-export function NovasiteCta() {
+// Styling comes from `src/styles/tita-sections.css`; motion from the Webflow IX2 runtime.
+export function CtaSection() {
   return (
     <section className="section cta">
       <div className="cta-top-loading-wrapper">
         <div className="top-loading-left">
           <div className="cta-top-wrapper-1">
             <div className="top-loading-content">
-              <img alt="Big Star" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="Big Star" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Art
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Intelligence
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Impact
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Amplify
               </h2>
@@ -35,25 +35,25 @@ export function NovasiteCta() {
           </div>
           <div className="cta-top-wrapper-1">
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Art
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Intelligence
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Impact
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Amplify
               </h2>
@@ -61,25 +61,25 @@ export function NovasiteCta() {
           </div>
           <div className="cta-top-wrapper-1">
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Art
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Intelligence
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Impact
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Amplify
               </h2>
@@ -89,25 +89,25 @@ export function NovasiteCta() {
         <div className="top-loading-right">
           <div className="cta-top-wrapper-2">
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Art
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Intelligence
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Impact
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Amplify
               </h2>
@@ -115,25 +115,25 @@ export function NovasiteCta() {
           </div>
           <div className="cta-top-wrapper-2">
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Art
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Intelligence
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Impact
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Amplify
               </h2>
@@ -141,25 +141,25 @@ export function NovasiteCta() {
           </div>
           <div className="cta-top-wrapper-2">
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Art
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Intelligence
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Impact
               </h2>
             </div>
             <div className="top-loading-content">
-              <img alt="" className="star-icon" loading="lazy" src="/novasite/star-icon.svg" />
+              <img alt="" className="star-icon" loading="lazy" src="/tita/star-icon.svg" />
               <h2 className="top-loading-title">
                 Amplify
               </h2>

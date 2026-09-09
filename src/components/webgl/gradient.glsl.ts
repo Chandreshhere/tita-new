@@ -1,5 +1,5 @@
 /**
- * MonopoGradient shaders.
+ * TitaGradient shaders.
  *
  * This is the reference site's own gradient program, recovered from the live
  * page by intercepting `WebGLRenderingContext.shaderSource` — not an

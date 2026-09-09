@@ -5,7 +5,7 @@ import { gsap } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
 import { useSmoothScroll } from '@/components/core/SmoothScrollProvider'
 import { TransitionLink } from '@/components/core/TransitionLink'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { EXTERNAL_OFFICES, NAV_FOOTER, SOCIALS } from '@/components/navigation/nav-links'
 import { SITE, OFFICES } from '@/data/site'
 import styles from './Footer.module.scss'
@@ -74,7 +74,7 @@ export function Footer() {
               data-footer-reveal
             />
             <h2 className={`${styles.title} t-h2`} data-footer-reveal>
-              <MonopoText>Ready to compose your renaissance?</MonopoText>
+              <TitaText>Ready to compose your renaissance?</TitaText>
             </h2>
           </div>
         </div>

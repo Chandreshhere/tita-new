@@ -2,7 +2,7 @@
  * Gradient configurations.
  *
  * Every value here is the reference site's own — the page heroes come from the
- * `<monopo-gradient>` elements in the captured HTML, and the 34 per-project
+ * `<tita-gradient>` elements in the captured HTML, and the 34 per-project
  * palettes come from the live Prismic payload (`_nuxt/static/.../state.js`),
  * which is what drives the background as the home page's project stack scrolls.
  *

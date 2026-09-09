@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
 import { teamMembers } from '@/data/team'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { PixiImage } from '@/components/webgl/PixiImage'
 import styles from './TeamGrid.module.scss'
 
@@ -57,7 +57,7 @@ export function TeamGrid() {
               </div>
               <div className="col-3of4 col-sm-8of9">
                 <h2 className="t-h2">
-                  <MonopoText>Founded by</MonopoText>
+                  <TitaText>Founded by</TitaText>
                 </h2>
               </div>
             </div>
@@ -83,7 +83,7 @@ export function TeamGrid() {
                 />
                 <div className={styles.info}>
                   <h3 className={`${styles.name} t-h4`}>
-                    <MonopoText>{member.name}</MonopoText>
+                    <TitaText>{member.name}</TitaText>
                   </h3>
                   <ul className={`${styles.roles} t-list t-h6 t-h6--spacing`}>
                     {member.roles.map((role) => (

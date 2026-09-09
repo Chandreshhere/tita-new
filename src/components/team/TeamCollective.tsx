@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { createFadeReveal, createTextReveal } from '@/lib/animations'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './TeamCollective.module.scss'
 
 const LINES = [
@@ -38,7 +38,7 @@ export function TeamCollective() {
             {LINES.map((line, i) => (
               <span className={`${styles.line} ${styles[`line${i}`]}`} key={line}>
                 <span data-line>
-                  <MonopoText>{line}</MonopoText>
+                  <TitaText>{line}</TitaText>
                 </span>
               </span>
             ))}

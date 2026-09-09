@@ -5,7 +5,7 @@ import { gsap, ScrollTrigger } from '@/lib/gsap'
 import { ContactHero } from './ContactHero'
 import { ContactForm } from './ContactForm'
 import { Circles } from './Circles'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { SITE, OFFICES, PILLARS } from '@/data/site'
 import styles from './ContactColumns.module.scss'
 
@@ -129,7 +129,7 @@ export function ContactColumns() {
               <div className="col-6of11 col-sm-12of12">
                 <div className={styles.block} data-reveal>
                   <h2 className={`${styles.blockTitle} t-h5 t-h5--bold`}>
-                    <MonopoText>Work with us</MonopoText>
+                    <TitaText>Work with us</TitaText>
                   </h2>
                   <div className="t-wysiwyg t-text">
                     <p>
@@ -145,7 +145,7 @@ export function ContactColumns() {
               <div className="col-4of11 offset-1of11 col-sm-12of12 offset-sm-0">
                 <div className={styles.block} data-reveal>
                   <h2 className={`${styles.blockTitle} t-h5 t-h5--bold`}>
-                    <MonopoText>What we do</MonopoText>
+                    <TitaText>What we do</TitaText>
                   </h2>
                   <div className="t-wysiwyg t-text">
                     <p>

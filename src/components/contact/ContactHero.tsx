@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { Ruler } from '@/components/ui/Ruler'
 import { WordSwap } from './WordSwap'
 import styles from './ContactHero.module.scss'
@@ -50,19 +50,19 @@ export function ContactHero({ progress = 0 }: { progress?: number }) {
             <h1 className={`${styles.title} t-h1`}>
               <span className={styles.line}>
                 <span data-line>
-                  <MonopoText>Ready to </MonopoText>
+                  <TitaText>Ready to </TitaText>
                   <WordSwap words={['compose', 'ignite']} />
                 </span>
               </span>
               <span className={styles.line}>
                 <span data-line>
-                  <MonopoText>your </MonopoText>
+                  <TitaText>your </TitaText>
                   <WordSwap words={['renaissance', 'legacy']} delay={400} />
                 </span>
               </span>
               <span className={styles.line}>
                 <span data-line>
-                  <MonopoText>→ with us.</MonopoText>
+                  <TitaText>→ with us.</TitaText>
                 </span>
               </span>
             </h1>

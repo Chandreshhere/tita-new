@@ -1,5 +1,5 @@
 import { studioGallery } from '@/data/team'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { PixiGallery } from '@/components/webgl/PixiGallery'
 import styles from './StudioGallery.module.scss'
 
@@ -16,7 +16,7 @@ export function StudioGallery() {
 
         <div className="col-7of24 col-md-9of24 col-sm-12of12">
           <h2 className={`${styles.title} t-h2`}>
-            <MonopoText>A peek inside the studio →</MonopoText>
+            <TitaText>A peek inside the studio →</TitaText>
           </h2>
         </div>
 

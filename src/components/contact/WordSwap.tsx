@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './WordSwap.module.scss'
 
 /**
@@ -59,7 +59,7 @@ export function WordSwap({ words, delay = 0 }: { words: string[]; delay?: number
           key={word + i}
           aria-hidden={i === index ? undefined : true}
         >
-          <MonopoText>{word}</MonopoText>
+          <TitaText>{word}</TitaText>
         </span>
       ))}
     </span>

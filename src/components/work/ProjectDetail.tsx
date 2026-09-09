@@ -6,7 +6,7 @@ import { createFadeReveal } from '@/lib/animations'
 import { prefersReducedMotion } from '@/lib/motion'
 import type { Project } from '@/data/projects'
 import { TransitionLink } from '@/components/core/TransitionLink'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { ClientMark } from './ClientMark'
 import { ScrollCue } from '@/components/ui/ScrollCue'
 import styles from './ProjectDetail.module.scss'
@@ -57,7 +57,7 @@ export function ProjectDetail({ project, next }: { project: Project; next: Proje
             <h1 className={`${styles.title} t-h1`}>
               <span className={styles.line}>
                 <span data-line>
-                  <MonopoText>{project.title}</MonopoText>
+                  <TitaText>{project.title}</TitaText>
                 </span>
               </span>
             </h1>
@@ -122,7 +122,7 @@ export function ProjectDetail({ project, next }: { project: Project; next: Proje
               data-cursor="case"
             >
               <h2 className="t-h2" data-reveal>
-                <MonopoText>{next.title}</MonopoText>
+                <TitaText>{next.title}</TitaText>
               </h2>
             </TransitionLink>
           </div>

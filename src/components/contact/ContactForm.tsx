@@ -2,7 +2,7 @@
 
 import { useId, useRef, useState, type FormEvent } from 'react'
 import { gsap } from '@/lib/gsap'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './ContactForm.module.scss'
 
 type Fields = {
@@ -140,7 +140,7 @@ export function ContactForm() {
         <div className="col-5of11 col-sm-12of12">
           <div className={styles.info}>
             <h2 className={`${styles.infoTitle} t-h5 t-h5--bold`}>
-              <MonopoText>Let’s create</MonopoText>
+              <TitaText>Let’s create</TitaText>
             </h2>
             <div className="t-text">
               <p>

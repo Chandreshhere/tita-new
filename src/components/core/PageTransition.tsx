@@ -12,9 +12,9 @@ import {
 import { gsap } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
 import { TRANSITION_GRADIENTS } from '@/data/gradients'
-import { MonopoGradient } from '@/components/webgl/MonopoGradient'
+import { TitaGradient } from '@/components/webgl/TitaGradient'
 import { Logo } from '@/components/ui/Logo'
-import type { MonopoGradientRenderer } from '@/components/webgl/MonopoGradientRenderer'
+import type { TitaGradientRenderer } from '@/components/webgl/TitaGradientRenderer'
 import styles from './PageTransition.module.scss'
 
 type TransitionApi = { navigate: (href: string) => void }
@@ -40,7 +40,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
 
   const overlayRef = useRef<HTMLDivElement>(null)
   const logoRef = useRef<HTMLDivElement>(null)
-  const rendererRef = useRef<MonopoGradientRenderer | null>(null)
+  const rendererRef = useRef<TitaGradientRenderer | null>(null)
   const pendingRef = useRef<string | null>(null)
   const runningRef = useRef(false)
   // The first pathname effect fires on mount; there is nothing to reveal then.
@@ -107,7 +107,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
     <TransitionContext.Provider value={{ navigate }}>
       {children}
       <div ref={overlayRef} className={styles.overlay} aria-hidden="true">
-        <MonopoGradient
+        <TitaGradient
           className={styles.canvas}
           config={TRANSITION_GRADIENTS['/']}
           interactive={false}

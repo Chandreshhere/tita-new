@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { createFadeReveal, createTextReveal } from '@/lib/animations'
 import { MANIFESTO, MANIFESTO_TWO } from '@/data/site'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './Manifesto.module.scss'
 
 /**
@@ -38,7 +38,7 @@ export function Manifesto() {
             {MANIFESTO.map((line, i) => (
               <span className={`${styles.line} ${i % 2 ? styles.indent : ''}`} key={line}>
                 <span data-line>
-                  <MonopoText>{line}</MonopoText>
+                  <TitaText>{line}</TitaText>
                 </span>
               </span>
             ))}

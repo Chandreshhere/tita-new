@@ -1,14 +1,14 @@
-// Verbatim markup from the Novasite template (`full home .zip`): the `section project` block — Selected work.
+// Verbatim markup from the Tita template (`full home .zip`): the `section project` block — Selected work.
 // Only the runtime artefacts of the capture were removed — SplitText's per-letter
 // divs, GSAP/IX2 inline styles and the widget state Webflow's runtime rebuilds.
-// Styling comes from `src/styles/novasite.css`; motion from the Webflow IX2 runtime.
+// Styling comes from `src/styles/tita-sections.css`; motion from the Webflow IX2 runtime.
 //
 // The four cards are the template's, repeated over TITA's own projects instead
 // of being hard-coded: the card image is the project thumbnail, the badge is the
 // client's mark, and the chip carries the collection it belongs to.
 import { homeProjects } from '@/data/projects'
 
-export function NovasiteProject() {
+export function ProjectSection() {
   return (
     <section className="section project" id="project">
       <div className="w-layout-blockcontainer container w-container">

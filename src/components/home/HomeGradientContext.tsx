@@ -9,10 +9,10 @@ import {
   type ReactNode,
 } from 'react'
 import type { GradientConfig } from '@/data/gradients'
-import type { MonopoGradientRenderer } from '@/components/webgl/MonopoGradientRenderer'
+import type { TitaGradientRenderer } from '@/components/webgl/TitaGradientRenderer'
 
 type Api = {
-  register: (r: MonopoGradientRenderer) => void
+  register: (r: TitaGradientRenderer) => void
   /** Morph the page background to a new palette. */
   setPalette: (config: GradientConfig, duration?: number) => void
 }
@@ -30,10 +30,10 @@ export const useHomeGradient = () => useContext(Ctx)
  * canvas the hero owns, without a second WebGL context.
  */
 export function HomeGradientProvider({ children }: { children: ReactNode }) {
-  const rendererRef = useRef<MonopoGradientRenderer | null>(null)
+  const rendererRef = useRef<TitaGradientRenderer | null>(null)
   const pendingRef = useRef<{ config: GradientConfig; duration: number } | null>(null)
 
-  const register = useCallback((r: MonopoGradientRenderer) => {
+  const register = useCallback((r: TitaGradientRenderer) => {
     rendererRef.current = r
     // The stack can settle on a project before WebGL finishes initialising.
     if (pendingRef.current) {

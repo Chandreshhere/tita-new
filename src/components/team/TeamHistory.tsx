@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { createFadeReveal, createTextReveal } from '@/lib/animations'
 import { history } from '@/data/team'
-import { MonopoLines } from '@/components/ui/MonopoText'
+import { TitaLines } from '@/components/ui/TitaText'
 import { PixiImage } from '@/components/webgl/PixiImage'
 import styles from './TeamHistory.module.scss'
 
@@ -39,7 +39,7 @@ export function TeamHistory() {
 
             <div className="col-10of24 col-md-12of24 col-sm-12of12">
               <h2 className={`${styles.title} t-h2`} data-title>
-                <MonopoLines lineClassName={styles.line}>{entry.title}</MonopoLines>
+                <TitaLines lineClassName={styles.line}>{entry.title}</TitaLines>
               </h2>
 
               <div className="row">

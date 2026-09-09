@@ -9,12 +9,12 @@ if (typeof window !== 'undefined') {
 
 export { gsap, ScrollTrigger }
 
-/** The two easing curves the reference site uses almost exclusively. */
+/** The easing curves used across the site. */
 export const EASE = {
   out: 'power3.out',
   inOut: 'power3.inOut',
-  /** cubic-bezier(.165,.84,.44,1) — the site's default transition curve. */
-  monopo: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+  /** cubic-bezier(.165,.84,.44,1) — the default transition curve. */
+  standard: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
 } as const
 
 export const CUBIC_OUT = [0.165, 0.84, 0.44, 1] as const

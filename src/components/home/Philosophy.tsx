@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { createFadeReveal, createTextReveal } from '@/lib/animations'
 import { PHILOSOPHY } from '@/data/services'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { PixiImage } from '@/components/webgl/PixiImage'
 import styles from './Philosophy.module.scss'
 
@@ -35,7 +35,7 @@ export function Philosophy() {
           <div className="col-14of24 col-sm-12of12">
             <h2 className={`${styles.title} t-h2`} data-title>
               <span data-line>
-                <MonopoText>{PHILOSOPHY.title}</MonopoText>
+                <TitaText>{PHILOSOPHY.title}</TitaText>
               </span>
             </h2>
           </div>

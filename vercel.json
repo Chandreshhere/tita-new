@@ -6,13 +6,13 @@
   "regions": ["bom1"],
   "headers": [
     {
-      "source": "/novasite/fonts/(.*)",
+      "source": "/tita/fonts/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
     {
-      "source": "/novasite/js/(.*)",
+      "source": "/tita/js/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]

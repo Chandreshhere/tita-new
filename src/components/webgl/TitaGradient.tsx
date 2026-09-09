@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import type { GradientConfig } from '@/data/gradients'
-import { MonopoGradientRenderer } from './MonopoGradientRenderer'
+import { TitaGradientRenderer } from './TitaGradientRenderer'
 
 type Props = {
   config: GradientConfig
@@ -13,12 +13,12 @@ type Props = {
    * transition curtain, which must stay still while it covers the page.
    */
   interactive?: boolean
-  onReady?: (renderer: MonopoGradientRenderer) => void
+  onReady?: (renderer: TitaGradientRenderer) => void
 }
 
-export function MonopoGradient({ config, className, interactive = true, onReady }: Props) {
+export function TitaGradient({ config, className, interactive = true, onReady }: Props) {
   const hostRef = useRef<HTMLDivElement>(null)
-  const rendererRef = useRef<MonopoGradientRenderer | null>(null)
+  const rendererRef = useRef<TitaGradientRenderer | null>(null)
   const onReadyRef = useRef(onReady)
   onReadyRef.current = onReady
 
@@ -26,7 +26,7 @@ export function MonopoGradient({ config, className, interactive = true, onReady 
     const host = hostRef.current
     if (!host) return
 
-    const renderer = new MonopoGradientRenderer(host)
+    const renderer = new TitaGradientRenderer(host)
     rendererRef.current = renderer
 
     let cancelled = false
@@ -38,7 +38,7 @@ export function MonopoGradient({ config, className, interactive = true, onReady 
       .catch((err) => {
         // A dead WebGL context must not take the page with it — the layer below
         // is already coloured.
-        console.warn('[MonopoGradient] WebGL unavailable:', err)
+        console.warn('[TitaGradient] WebGL unavailable:', err)
       })
 
     return () => {

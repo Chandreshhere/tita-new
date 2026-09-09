@@ -1,8 +1,8 @@
-// Verbatim markup from the Novasite template (`full home .zip`): the `.footer-section` block — menus, newsletter and the bottom marquee.
+// Verbatim markup from the Tita template (`full home .zip`): the `.footer-section` block — menus, newsletter and the bottom marquee.
 // Only the runtime artefacts of the capture were removed — SplitText's per-letter
 // divs, GSAP/IX2 inline styles and the widget state Webflow's runtime rebuilds.
-// Styling comes from `src/styles/novasite.css`; motion from the Webflow IX2 runtime.
-export function NovasiteFooter() {
+// Styling comes from `src/styles/tita-sections.css`; motion from the Webflow IX2 runtime.
+export function FooterSection() {
   return (
     <div className="footer-section" data-w-id="de855db7-a027-d64c-c63e-3f0d2653e1ce">
       <section className="section footer">
@@ -16,8 +16,8 @@ export function NovasiteFooter() {
                       instagram
                     </h6>
                     <div className="footer-hover-icon-block">
-                      <img alt="" className="footer-menu-arrow _1" loading="lazy" src="/novasite/footer-arrow.svg" />
-                      <img alt="" className="footer-menu-arrow _2" loading="lazy" src="/novasite/footer-arrow.svg" />
+                      <img alt="" className="footer-menu-arrow _1" loading="lazy" src="/tita/footer-arrow.svg" />
+                      <img alt="" className="footer-menu-arrow _2" loading="lazy" src="/tita/footer-arrow.svg" />
                     </div>
                   </a>
                   <a className="footer-menu-link w-inline-block" data-w-id="de855db7-a027-d64c-c63e-3f0d2653e1db" href="https://www.linkedin.com/company/this-is-that-agency" target="_blank" rel="noreferrer">
@@ -25,8 +25,8 @@ export function NovasiteFooter() {
                       linkedin
                     </h6>
                     <div className="footer-hover-icon-block">
-                      <img alt="" className="footer-menu-arrow _1" loading="lazy" src="/novasite/footer-arrow.svg" />
-                      <img alt="" className="footer-menu-arrow _2" loading="lazy" src="/novasite/footer-arrow.svg" />
+                      <img alt="" className="footer-menu-arrow _1" loading="lazy" src="/tita/footer-arrow.svg" />
+                      <img alt="" className="footer-menu-arrow _2" loading="lazy" src="/tita/footer-arrow.svg" />
                     </div>
                   </a>
                   <a className="footer-menu-link w-inline-block" data-w-id="de855db7-a027-d64c-c63e-3f0d2653e1e1" href="mailto:naamdasi@thisisthat.co.in">
@@ -34,8 +34,8 @@ export function NovasiteFooter() {
                       email
                     </h6>
                     <div className="footer-hover-icon-block">
-                      <img alt="" className="footer-menu-arrow _1" loading="lazy" src="/novasite/footer-arrow.svg" />
-                      <img alt="" className="footer-menu-arrow _2" loading="lazy" src="/novasite/footer-arrow.svg" />
+                      <img alt="" className="footer-menu-arrow _1" loading="lazy" src="/tita/footer-arrow.svg" />
+                      <img alt="" className="footer-menu-arrow _2" loading="lazy" src="/tita/footer-arrow.svg" />
                     </div>
                   </a>
                   <a className="footer-menu-link w-inline-block" data-w-id="de855db7-a027-d64c-c63e-3f0d2653e1e7" href="tel:+917000918312">
@@ -43,8 +43,8 @@ export function NovasiteFooter() {
                       call
                     </h6>
                     <div className="footer-hover-icon-block">
-                      <img alt="" className="footer-menu-arrow _1" loading="lazy" src="/novasite/footer-arrow.svg" />
-                      <img alt="" className="footer-menu-arrow _2" loading="lazy" src="/novasite/footer-arrow.svg" />
+                      <img alt="" className="footer-menu-arrow _1" loading="lazy" src="/tita/footer-arrow.svg" />
+                      <img alt="" className="footer-menu-arrow _2" loading="lazy" src="/tita/footer-arrow.svg" />
                     </div>
                   </a>
                 </div>
@@ -83,7 +83,7 @@ export function NovasiteFooter() {
                       <input className="footer-text-field w-input" data-name="Footer Email" id="Footer-Email" maxLength={256} name="Footer-Email" placeholder="Enter email address" required type="email" />
                       <input className="footer-submit-button w-button" data-wait="" type="submit" value="Subscribe" />
                       {/* Empty captcha slot, kept for the form's layout — see
-                          the same note in NovasiteContact. */}
+                          the same note in ContactSection. */}
                       <div>
                         <div></div>
                       </div>

@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { createFadeReveal } from '@/lib/animations'
 import { clientLogos } from '@/data/services'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './ClientBand.module.scss'
 
 /** The client marks band — the template's `award` slot, carrying real clients. */
@@ -28,7 +28,7 @@ export function ClientBand() {
         </div>
         <div className="col-14of24 col-sm-12of12">
           <h2 className={`${styles.title} t-h2`}>
-            <MonopoText>Brands we compose for</MonopoText>
+            <TitaText>Brands we compose for</TitaText>
           </h2>
         </div>
       </div>

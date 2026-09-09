@@ -1,6 +1,6 @@
 import { TEAM_GRADIENT } from '@/data/gradients'
 import { IntroGradient } from '@/components/ui/IntroGradient'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { ScrollCue } from '@/components/ui/ScrollCue'
 import styles from './TeamHero.module.scss'
 
@@ -36,7 +36,7 @@ export function TeamHero() {
         {LINES.map((line, i) => (
           <span className={`${styles.line} ${styles[`line${i}`]}`} key={line}>
             <span data-line>
-              <MonopoText>{line}</MonopoText>
+              <TitaText>{line}</TitaText>
             </span>
           </span>
         ))}

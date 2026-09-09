@@ -4,7 +4,7 @@ import { useEffect, useRef, type ReactNode } from 'react'
 import { gsap } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
 import type { GradientConfig } from '@/data/gradients'
-import { MonopoGradient } from '@/components/webgl/MonopoGradient'
+import { TitaGradient } from '@/components/webgl/TitaGradient'
 import { Ruler } from './Ruler'
 import styles from './IntroGradient.module.scss'
 
@@ -60,7 +60,7 @@ export function IntroGradient({ config, children, foot, className, short = false
       ref={rootRef}
       className={`${styles.root} ${short ? styles.short : ''} ${className ?? ''}`}
     >
-      <MonopoGradient className={styles.gradient} config={config} />
+      <TitaGradient className={styles.gradient} config={config} />
 
       {!short && (
         <>

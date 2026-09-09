@@ -16,7 +16,7 @@ import styles from './HeroLens.module.scss'
 
 type Line = { en: string; alt: string }
 
-/** See the note on the identical helper in MonopoGradientRenderer. */
+/** See the note on the identical helper in TitaGradientRenderer. */
 function safeDestroyApp(app: Application | null) {
   if (!app) return
   try {
@@ -203,7 +203,7 @@ export function HeroLens({ lines, titleSelector }: { lines: Line[]; titleSelecto
         glProgram: GlProgram.from({
           vertex: LENS_VERTEX,
           fragment: LENS_FRAGMENT,
-          name: 'monopo-hero-lens',
+          name: 'tita-hero-lens',
         }),
         resources: {
           lensUniforms: uniforms,

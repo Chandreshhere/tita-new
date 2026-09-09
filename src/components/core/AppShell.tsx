@@ -5,7 +5,7 @@ import { useEffect, type ReactNode } from 'react'
 import { ScrollTrigger } from '@/lib/gsap'
 import { Navigation } from '@/components/navigation/Navigation'
 import { SiteFooter } from '@/components/footer/SiteFooter'
-import { NovasiteRuntime } from '@/components/novasite/NovasiteRuntime'
+import { SectionRuntime } from '@/components/sections/SectionRuntime'
 import { CustomCursor } from './CustomCursor'
 import { PageTransitionProvider } from './PageTransition'
 import { Preloader } from './Preloader'
@@ -47,9 +47,9 @@ export function AppShell({ children }: { children: ReactNode }) {
           <main id="main">{children}</main>
           <SiteFooter />
         </div>
-        {/* Drives every `.novasite` subtree on the page — the cloned sections on
+        {/* Drives every `.tita` subtree on the page — the cloned sections on
             home and the footer everywhere — and re-scans on each route change. */}
-        <NovasiteRuntime />
+        <SectionRuntime />
         <CustomCursor />
         <CookieNotice />
         <Preloader />

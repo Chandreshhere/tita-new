@@ -1,8 +1,8 @@
-// Verbatim markup from the Novasite template (`full home .zip`): the `section contact` block — Let’s Talk and the contact form.
+// Verbatim markup from the Tita template (`full home .zip`): the `section contact` block — Let’s Talk and the contact form.
 // Only the runtime artefacts of the capture were removed — SplitText's per-letter
 // divs, GSAP/IX2 inline styles and the widget state Webflow's runtime rebuilds.
-// Styling comes from `src/styles/novasite.css`; motion from the Webflow IX2 runtime.
-export function NovasiteContact() {
+// Styling comes from `src/styles/tita-sections.css`; motion from the Webflow IX2 runtime.
+export function ContactSection() {
   return (
     <section className="section contact" id="contact">
       <div className="w-layout-blockcontainer container w-container">
@@ -18,7 +18,7 @@ export function NovasiteContact() {
                     Have something in mind? Tell us where the brand is now and where it should be.
                   </div>
                   <div className="user-block">
-                    <img alt="" className="user-img" data-w-id="1d0de61a-a5ab-4b9f-920f-d541428ae4cf" loading="lazy" src="/novasite/contact-user.webp" />
+                    <img alt="" className="user-img" data-w-id="1d0de61a-a5ab-4b9f-920f-d541428ae4cf" loading="lazy" src="/tita/contact-user.webp" />
                     <div className="user-name-tag">
                       <div className="user-name" data-w-id="9c299e6d-fe41-1be7-0aa3-e0363406c7a0">
                         Naamdasi Patel

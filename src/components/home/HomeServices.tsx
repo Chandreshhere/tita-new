@@ -5,7 +5,7 @@ import { gsap } from '@/lib/gsap'
 import { createFadeReveal, createTextReveal } from '@/lib/animations'
 import { serviceGroups } from '@/data/services'
 import { TransitionLink } from '@/components/core/TransitionLink'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './HomeServices.module.scss'
 
 /**
@@ -34,7 +34,7 @@ export function HomeServices() {
         <div className="col-14of24 col-sm-12of12">
           <h2 className={`${styles.title} t-h2`} data-title>
             <span data-line>
-              <MonopoText>The Trinity</MonopoText>
+              <TitaText>The Trinity</TitaText>
             </span>
           </h2>
           <p className={`${styles.lede} t-text`} data-reveal>

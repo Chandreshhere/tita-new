@@ -5,7 +5,7 @@ import { gsap } from '@/lib/gsap'
 import { createFadeReveal, createTextReveal } from '@/lib/animations'
 import { prefersReducedMotion } from '@/lib/motion'
 import { network, offices } from '@/data/team'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { PixiImage } from '@/components/webgl/PixiImage'
 import { Circles } from '@/components/contact/Circles'
 import styles from './TeamNetwork.module.scss'
@@ -107,7 +107,7 @@ export function TeamNetwork() {
           <div className="col-10of24 col-md-12of24 col-sm-12of12">
             <h2 className={`${styles.title} t-h2`} data-title>
               <span data-line>
-                <MonopoText>Everything we compose with</MonopoText>
+                <TitaText>Everything we compose with</TitaText>
               </span>
             </h2>
 

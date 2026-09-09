@@ -1,6 +1,6 @@
 import { SERVICES_GRADIENT } from '@/data/gradients'
 import { IntroGradient } from '@/components/ui/IntroGradient'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './ServicesHero.module.scss'
 
 const LINES = ['The Trinity', 'Technology · Brand · Media']
@@ -34,7 +34,7 @@ export function ServicesHero() {
               {LINES.map((line, i) => (
                 <span className={`${styles.line} ${styles[`line${i}`]}`} key={line}>
                   <span data-line>
-                    <MonopoText>{line}</MonopoText>
+                    <TitaText>{line}</TitaText>
                   </span>
                 </span>
               ))}

@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { createFadeReveal, createTextReveal } from '@/lib/animations'
 import { manifesto } from '@/data/services'
-import { MonopoLines } from '@/components/ui/MonopoText'
+import { TitaLines } from '@/components/ui/TitaText'
 import styles from './ServicesManifesto.module.scss'
 
 /**
@@ -40,7 +40,7 @@ export function ServicesManifesto() {
         </div>
         <div className="col-20of24 col-md-24of24 col-sm-12of12">
           <h2 className="t-h2 t-h2--display" data-title>
-            <MonopoLines lineClassName={styles.line}>{manifesto.title}</MonopoLines>
+            <TitaLines lineClassName={styles.line}>{manifesto.title}</TitaLines>
           </h2>
         </div>
       </div>

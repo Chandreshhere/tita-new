@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { createFadeReveal, createTextReveal } from '@/lib/animations'
 import { processSteps } from '@/data/awards'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { PixiImage } from '@/components/webgl/PixiImage'
 import styles from './WorkProcess.module.scss'
 
@@ -41,7 +41,7 @@ export function WorkProcess() {
         <div className="col-14of24 col-sm-12of12">
           <h2 className={`${styles.title} t-h2`} data-title>
             <span data-line>
-              <MonopoText>How a composition comes together</MonopoText>
+              <TitaText>How a composition comes together</TitaText>
             </span>
           </h2>
           <p className={`${styles.lede} t-text`} data-reveal>

@@ -2,14 +2,14 @@ import type { Metadata, Viewport } from 'next'
 import { Inter_Tight } from 'next/font/google'
 import { AppShell } from '@/components/core/AppShell'
 import '@/styles/globals.scss'
-// The footer is the Novasite one on every route, and its rules are scoped
-// under `.novasite`, so the template stylesheet is site-wide rather than
+// The footer is the Tita one on every route, and its rules are scoped
+// under `.tita`, so the template stylesheet is site-wide rather than
 // home-only.
-import '@/styles/novasite.css'
-import '@/styles/novasite-tita.css'
+import '@/styles/tita-sections.css'
+import '@/styles/tita-sections-theme.css'
 
 /**
- * Inter Tight is the body face of the Novasite build — the paragraphs, nav and
+ * Inter Tight is the body face of the Tita build — the paragraphs, nav and
  * footer copy below the hero are set in it — and now carries body text across
  * the whole site. Clash Display takes the headings (see `_fonts.scss`).
  */
@@ -51,7 +51,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // `data-wf-page` is what the Novasite clone's interactions hang on: Webflow
+    // `data-wf-page` is what the Tita clone's interactions hang on: Webflow
     // keys page-scoped IX2 targets as `<pageId>|<elementId>` and reads the page
     // id from this attribute. Without it every one of those targets fails to
     // resolve and the template's hovers and reveals are silently inert.
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-wf-page="6925368d84535d51ca629726"
     >
       <body>
-        {/* The Novasite clone on the home page keys its pre-interaction states
+        {/* The Tita clone on the home page keys its pre-interaction states
             off `w-mod-js`, exactly as the template's own page does. Setting it
             during parse — before paint — is what stops those sections flashing
             in at their finished state while the Webflow runtime loads. */}

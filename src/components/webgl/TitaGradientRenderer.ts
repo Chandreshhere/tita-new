@@ -12,7 +12,7 @@ import type { GradientConfig } from '@/data/gradients'
 import { FRAGMENT, VERTEX } from './gradient.glsl'
 
 /**
- * Owns one WebGL context and draws the monopo gradient into it.
+ * Owns one WebGL context and draws the TITA gradient into it.
  *
  * Two things are load-bearing and were measured off the live site rather than
  * invented:
@@ -49,7 +49,7 @@ const DISPLACEMENT_MAX = 5
 const NOISE_SIZE = 0.5
 const NOISE_INTENSITY = 0.04
 
-export class MonopoGradientRenderer {
+export class TitaGradientRenderer {
   private app: Application | null = null
   private mesh: Mesh<Geometry, Shader> | null = null
   private uniforms: UniformGroup | null = null
@@ -132,7 +132,7 @@ export class MonopoGradientRenderer {
     })
 
     const shader = new Shader({
-      glProgram: GlProgram.from({ vertex: VERTEX, fragment: FRAGMENT, name: 'monopo-gradient' }),
+      glProgram: GlProgram.from({ vertex: VERTEX, fragment: FRAGMENT, name: 'tita-gradient' }),
       resources: { gradientUniforms: this.uniforms },
     })
 

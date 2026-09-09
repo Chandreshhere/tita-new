@@ -3,16 +3,16 @@ import { Fragment, type ReactNode } from 'react'
 /**
  * Heading text, upright throughout.
  *
- * This used to carry the monopo wordmark motif — every `o` and `i` swapped into
+ * Carries the wordmark motif — every `o` and `i` swapped into
  * the italic cut. That went with the type change: Clash Display ships no italic,
  * so the motif could only ever render as a synthetic oblique, and the site is
  * TITA's rather than the reference's now.
  *
  * What remains is the line handling: a `\n` in the source becomes a hard break,
  * matching the `<br>` the original uses inside a handful of headings. Kept as a
- * component so the 28 call sites, and `MonopoLines` below, stay unchanged.
+ * component so the 28 call sites, and `TitaLines` below, stay unchanged.
  */
-export function MonopoText({ children }: { children: string }) {
+export function TitaText({ children }: { children: string }) {
   const nodes: ReactNode[] = []
   let buffer = ''
   let key = 0
@@ -41,7 +41,7 @@ export function MonopoText({ children }: { children: string }) {
  * Same text handling, but each `\n`-separated line is wrapped in its own
  * `[data-line]` element so `createTextReveal` can mask and stagger them.
  */
-export function MonopoLines({
+export function TitaLines({
   children,
   className,
   lineClassName,
@@ -56,7 +56,7 @@ export function MonopoLines({
       {lines.map((line, i) => (
         <span className={lineClassName} data-line-mask key={i}>
           <span data-line>
-            <MonopoText>{line}</MonopoText>
+            <TitaText>{line}</TitaText>
           </span>
         </span>
       ))}

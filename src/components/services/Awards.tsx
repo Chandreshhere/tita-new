@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { createFadeReveal } from '@/lib/animations'
 import { processSteps } from '@/data/awards'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './Awards.module.scss'
 
 /**
@@ -38,7 +38,7 @@ export function Awards() {
         </div>
         <div className="col-16of24 col-md-24of24 col-sm-12of12">
           <h2 className={`${styles.title} t-h2 t-h2--display`}>
-            <MonopoText>How we work</MonopoText>
+            <TitaText>How we work</TitaText>
           </h2>
         </div>
       </div>

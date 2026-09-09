@@ -6,7 +6,7 @@ import { gsap } from '@/lib/gsap'
 import { createFadeReveal } from '@/lib/animations'
 import { servicesProjects } from '@/data/projects'
 import { TransitionLink } from '@/components/core/TransitionLink'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import styles from './ServicesWorks.module.scss'
 
 /**
@@ -41,7 +41,7 @@ export function ServicesWorks() {
         <div className="col-16of24 col-sm-12of12">
           <p className={`${styles.eyebrow} t-text--sm`}>What we could compose together</p>
           <h2 className="t-h2 t-h2--display">
-            <MonopoText>Selected work</MonopoText>
+            <TitaText>Selected work</TitaText>
           </h2>
         </div>
         <div className={`${styles.headRight} col-8of24 col-sm-12of12`}>
@@ -77,7 +77,7 @@ export function ServicesWorks() {
                   ))}
                 </ul>
                 <h3 className={`${styles.itemTitle} t-h4 t-h4--display`}>
-                  <MonopoText>{project.title}</MonopoText>
+                  <TitaText>{project.title}</TitaText>
                 </h3>
               </div>
             </TransitionLink>

@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react'
 import { gsap } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
 import { HOME_GRADIENT } from '@/data/gradients'
-import { MonopoGradient } from '@/components/webgl/MonopoGradient'
+import { TitaGradient } from '@/components/webgl/TitaGradient'
 import { useHomeGradient } from './HomeGradientContext'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { ScrollCue } from '@/components/ui/ScrollCue'
 import { HeroLens } from './HeroLens'
 import styles from './HomeHero.module.scss'
@@ -73,7 +73,7 @@ export function HomeHero() {
     <section ref={rootRef} className={styles.root}>
       {/* One fixed gradient layer for the whole page — the project stack below
           morphs its palette rather than mounting a second context. */}
-      <MonopoGradient
+      <TitaGradient
         className={styles.gradient}
         config={HOME_GRADIENT}
         onReady={register}
@@ -84,7 +84,7 @@ export function HomeHero() {
           {TITLE_LINES.map((line, i) => (
             <span className={`${styles.line} ${styles[`line${i}`]}`} key={line.en}>
               <span data-line>
-                <MonopoText>{line.en}</MonopoText>
+                <TitaText>{line.en}</TitaText>
               </span>
             </span>
           ))}

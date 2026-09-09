@@ -5,7 +5,7 @@ import { gsap, ScrollTrigger } from '@/lib/gsap'
 import { prefersReducedMotion } from '@/lib/motion'
 import { projects } from '@/data/projects'
 import { TransitionLink } from '@/components/core/TransitionLink'
-import { MonopoText } from '@/components/ui/MonopoText'
+import { TitaText } from '@/components/ui/TitaText'
 import { Ruler } from '@/components/ui/Ruler'
 import { ClientMark } from './ClientMark'
 import styles from './WorkGrid.module.scss'
@@ -134,7 +134,7 @@ export function WorkGrid() {
                   </div>
                   <div className={styles.info}>
                     <h2 className={`${styles.title} t-h4`}>
-                      <MonopoText>{project.title}</MonopoText>
+                      <TitaText>{project.title}</TitaText>
                     </h2>
                     <ul className={`${styles.categories} t-list t-h6 t-h6--spacing`}>
                       {project.categories.map((c) => (

@@ -2,21 +2,18 @@
 
 The site for **TITA**, a digital marketing agency in Indore and Ahmedabad.
 
-Two sources, deliberately kept apart:
+The site is built in two halves:
 
-- **Design and interaction** are a reverse-engineered rebuild of
-  [monopo.london](https://monopo.london/) — its grid, type scale, procedural
-  gradient, hero lens and scroll behaviour, recovered from the captured HTML/CSS
-  in the sibling folders and from the live site's own shader source.
-- **All content** is TITA's, transcribed from
-  [thisisthat.co.in](https://thisisthat.co.in/) — copy, services, founders,
-  studios and contact points — plus the 26-client portfolio, which comes from
-  the supplied `website_project_thumbnails` zip rather than the site.
+- **Above the hero** — a custom WebGL layer: a procedural gradient that reacts
+  to the pointer, a magnifying lens over the headline, and a pinned project
+  stack. All hand-written; see *The gradient* and *The hero lens* below.
+- **Below the hero** — a licensed Webflow template, cloned verbatim (markup,
+  stylesheet and interaction runtime) and refilled with TITA's own copy. It is
+  scoped under a single `.tita` class in `src/styles/tita-sections.css` so its
+  reset cannot leak into the custom half.
 
-Everything on the home page below the hero is a third source: the **Novasite**
-Webflow template in `full home .zip`, cloned verbatim — its markup, stylesheet
-and interaction runtime — and then filled with TITA's own copy (see *Home page*
-below).
+All copy, services, portfolio, founders and contact details are TITA's, from
+[thisisthat.co.in](https://thisisthat.co.in/).
 
 **Stack:** Next.js 15 (App Router) · React 19 · TypeScript · SCSS Modules · GSAP +
 ScrollTrigger · Lenis · PixiJS 8 · Swiper 11
@@ -29,18 +26,16 @@ npm run build && npm start
 
 ---
 
-## What came from the reference, and how
+## Where things come from
 
-Everything visual is derived from the capture rather than approximated:
+### The design system
 
-### Design, from monopo
-
-| Thing | Source |
+| Thing | Where it lives |
 |---|---|
-| 24-column grid, gutters, breakpoints | `styles.css` — `col-{n}of{d}` / `offset-{n}of{d}`, `.54vw` gutters, 767/979/1440 |
-| Type scale | the exact `max(vw, px)` pairs from `.t-h1`–`.t-h6`, `.t-text` |
-| Gradient shader + parameters | recovered from the live site (see below) |
-| Easing, durations, hover mechanics | `cubic-bezier(.165,.84,.44,1)` etc., lifted rule by rule |
+| 24-column grid, gutters, breakpoints | `_grid.scss` — `col-{n}of{d}` / `offset-{n}of{d}`, `.54vw` gutters, 767/979/1440 |
+| Type scale | `_typography.scss` — `max(vw, px)` pairs on `.t-h1`–`.t-h6`, `.t-text` |
+| Gradient shader + parameters | `webgl/gradient.glsl.ts`, `data/gradients.ts` |
+| Easing, durations, hover mechanics | `_variables.scss` — `cubic-bezier(.165,.84,.44,1)` throughout |
 
 ### Content, from TITA
 
@@ -52,7 +47,7 @@ Everything visual is derived from the capture rather than approximated:
 | Founders, studios, coordinates, contact | thisisthat.co.in/contact |
 | Client marks + editorial imagery | downloaded from the studio's own server |
 
-The `o`/`i`-in-italic motif is derived at render time by `MonopoText`, so
+The `o`/`i`-in-italic motif is derived at render time by `TitaText`, so
 `src/data` stays plain text.
 
 ---
@@ -92,7 +87,7 @@ Both are eased toward the target each frame, so the sheets keep drifting for a
 beat after the cursor stops.
 
 Parameters live in `src/data/gradients.ts`: page heroes from the captured
-`<monopo-gradient>` elements, plus **all 34 per-project palettes** lifted from
+`<tita-gradient>` elements, plus **all 34 per-project palettes** lifted from
 the live Prismic payload. Those drive the home page's most distinctive
 behaviour — see below.
 
@@ -102,7 +97,7 @@ behaviour — see below.
 
 ### Home page
 
-The hero is this site's own. **Everything below it is the Novasite template from
+The hero is this site's own. **Everything below it is the Tita template from
 `full home .zip`, cloned rather than reinterpreted** — its sections in its own
 order: `about` · `work` · `service` · `project` · `testimonial` (plus the
 `tablet-testimonial` slider below 991px) · `big-image` pinned behind `award` ·
@@ -111,7 +106,7 @@ order: `about` · `work` · `service` · `project` · `testimonial` (plus the
 
 It is a real clone, not a lookalike, so three things came across intact:
 
-**The markup** (`src/components/novasite/*.tsx`) is the template's, element for
+**The markup** (`src/components/sections/*.tsx`) is the template's, element for
 element. The zip ships a *rendered* DOM capture rather than Webflow source, so
 the only things removed were the artefacts of that capture: SplitText's
 per-letter `<div>`s (the original sentences are recovered from them), the inline
@@ -119,14 +114,14 @@ styles GSAP and IX2 had already written, the widget state Webflow's runtime
 rebuilds on init, and a stale Cloudflare Turnstile token.
 
 **The stylesheet** is the template's 126KB `styles.css`, rule for rule, in
-`src/styles/novasite.css`. It resets `body`, `*` and `h1`–`h6`, so every selector
-is prefixed with `.novasite` and confined to the clone's wrapper — the hero,
+`src/styles/tita-sections.css`. It resets `body`, `*` and `h1`–`h6`, so every selector
+is prefixed with `.tita` and confined to the clone's wrapper — the hero,
 header and other routes never see it. Two exceptions are deliberate and both are
 load-bearing:
 
 - `:root` keeps its 34 custom properties globally, because Webflow's IX2 resolves
   an animated colour through `getComputedStyle(document.documentElement)` and
-  nowhere else. Scoped to `.novasite`, every swatch resolved empty and fell back
+  nowhere else. Scoped to `.tita`, every swatch resolved empty and fell back
   to white — the award rows rendered white-on-white.
 - `html.w-mod-js:not(.w-mod-ix) …` rules keep their `html` part, because those
   state classes are set by Webflow's runtime on `<html>` itself. They hold each
@@ -135,7 +130,7 @@ load-bearing:
 
 **The motion** is Webflow's, not a reimplementation. The template's interactions
 are IX2/IX3 data keyed to the `data-w-id` attributes the markup still carries, so
-the runtime is vendored into `public/novasite/js` and loaded in order —
+the runtime is vendored into `public/tita/js` and loaded in order —
 jQuery → two shared chunks → the page bundle. Two things it needs:
 
 - `data-wf-page` on `<html>` (set in the root layout). Webflow keys page-scoped
@@ -144,7 +139,7 @@ jQuery → two shared chunks → the page bundle. Two things it needs:
   is inert.
 - `window.gsap` / `ScrollTrigger` / `SplitText`. IX3 reaches for them as globals.
   This app already ships GSAP 3.15 — the version the template loads — so
-  `NovasiteRuntime` publishes the existing instance rather than a second copy:
+  `SectionRuntime` publishes the existing instance rather than a second copy:
   one ticker, and one ScrollTrigger registry that Lenis is already driving.
 
 The template's forms posted to the captured site's Webflow endpoint. Submits are
@@ -153,7 +148,7 @@ Webflow binds to the form — validated, and resolved against a short delay, the
 the template's own `.w-form-done` panel is shown. Nothing leaves the page.
 
 Images were inlined as base64 in the capture (hence the 34MB `index.html`).
-They're extracted to `public/novasite`; the ones stored as an SVG wrapping a
+They're extracted to `public/tita`; the ones stored as an SVG wrapping a
 raster are re-rendered through a browser at 2×, which preserves the wrapper's
 cover-crop and its declared intrinsic size — reading the inner bitmap directly
 changed each card's aspect ratio and made the project section 65px too tall.
@@ -173,8 +168,8 @@ Two slots had no TITA equivalent and were repurposed rather than invented:
   (`awards.ts` is empty), so the section is now *four pillars* — Art, Strategy,
   Technology, Performance, the disciplines the studio actually leads with.
 
-Two strings needed a CSS accommodation, kept in `novasite-tita.css` so the
-generated `novasite.css` stays regenerable: the studio's email is eight
+Two strings needed a CSS accommodation, kept in `tita-tita.css` so the
+generated `tita.css` stays regenerable: the studio's email is eight
 characters longer than the template's placeholder and clipped out of the CTA
 below ~1264px, and the footer marquee token contains spaces where the
 template's did not, so it wrapped onto three lines.
@@ -283,19 +278,18 @@ on this site is the Work filter rail, both Contact columns, and eight section la
 ## Deliberate deviations
 
 **One typeface pairing, above and below the hero.** The site is set in the
-Novasite build's own faces — **Clash Display** for display type, **Inter Tight**
+Tita build's own faces — **Clash Display** for display type, **Inter Tight**
 for body — so the pages read as one thing rather than two. Clash Display is
 declared in `src/styles/_fonts.scss` from the six `.otf` files vendored to
-`public/novasite/fonts`, the same files `novasite.css` loads for its own scope,
+`public/tita/fonts`, the same files `tita-sections.css` loads for its own scope,
 so the browser fetches each once and the type is identical on both sides. Inter
 Tight comes through `next/font/google` in the root layout, self-hosted at build
-time. The earlier Roobert/Hanken Grotesk pairing, inherited from the monopo
-reference, is gone.
+time. An earlier Roobert/Hanken Grotesk pairing is gone.
 
 Two consequences worth knowing. Clash Display stops at Bold, but the type scale
 asks for 800 in a dozen places, so the Bold face claims `font-weight: 700 900`
 rather than letting the browser synthesise one. And Clash Display ships no
-italic, so the `o`/`i` motif in `MonopoText` renders as a synthetic oblique —
+italic, so the `o`/`i` motif in `TitaText` renders as a synthetic oblique —
 it suits the geometric letterforms, but it is not a drawn italic.
 
 **Everything measures against the lens host, never the viewport.** The text
@@ -344,7 +338,7 @@ plain text rather than a dead link. See the NEEDS CONFIRMATION comments in
 are real; `submit` resolves against a mocked delay. Swap it for a POST and nothing
 else needs to change.
 
-**`full home .zip`** is the "Novasite" Webflow template, and the whole home page
+**`full home .zip`** is the "Tita" Webflow template, and the whole home page
 below the hero is a verbatim clone of it — markup, stylesheet, images and its own
 Webflow interaction runtime — carrying TITA's copy. See *Home page* above for
 what that involved.
@@ -376,9 +370,9 @@ src/
     core/         AppShell · SmoothScrollProvider · PageTransition · Preloader
                   CustomCursor · TransitionLink · CookieNotice
     navigation/   Header · Navigation · WorldClocks
-    webgl/        MonopoGradient(+Renderer) · gradient.glsl · PixiGallery
+    webgl/        TitaGradient(+Renderer) · gradient.glsl · PixiGallery
                   PixiImage · CircleMaskImage
-    ui/           MonopoText · Logo · Ruler · ScrollCue · ParallaxObject · IntroGradient
+    ui/           TitaText · Logo · Ruler · ScrollCue · ParallaxObject · IntroGradient
     home/         HomeHero · HeroLens(+lens.glsl) · RecentWork · HomeGradientContext
                   Manifesto · WorkProcess · HomeServices · Philosophy
                   ClientBand · CtaMarquee

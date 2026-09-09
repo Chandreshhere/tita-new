@@ -6,7 +6,7 @@ import { SplitText } from 'gsap/SplitText'
 import { gsap, ScrollTrigger } from '@/lib/gsap'
 
 /**
- * The Novasite template's own runtime, vendored from Webflow's CDN.
+ * The Tita template's own runtime, vendored from Webflow's CDN.
  *
  * The section markup is a verbatim copy, and its motion is Webflow IX2 data
  * keyed to the `data-w-id` attributes that markup still carries — that payload
@@ -17,10 +17,10 @@ import { gsap, ScrollTrigger } from '@/lib/gsap'
  * itself on load.
  */
 const SCRIPTS = [
-  '/novasite/js/jquery.js',
-  '/novasite/js/webflow.schunk.e0c428ff9737f919.js',
-  '/novasite/js/webflow.schunk.be7637ad0e011449.js',
-  '/novasite/js/webflow.734d2955.7950910bb4aecaef.js',
+  '/tita/js/jquery.js',
+  '/tita/js/webflow.schunk.e0c428ff9737f919.js',
+  '/tita/js/webflow.schunk.be7637ad0e011449.js',
+  '/tita/js/webflow.734d2955.7950910bb4aecaef.js',
 ]
 
 /**
@@ -114,7 +114,7 @@ function interceptForms(root: HTMLElement) {
 
 /**
  * IX2 scans the DOM once, when the page bundle loads. Routing here is
- * client-side, so a route that mounts new `.novasite` markup after that scan
+ * client-side, so a route that mounts new `.tita` markup after that scan
  * gets none of its interactions — and worse, the template's pre-init CSS leaves
  * those elements hidden. Tearing the store down and re-initialising it with the
  * same data re-scans whatever is on screen now.
@@ -130,7 +130,7 @@ function reinitInteractions() {
       ix2.init(data)
     }
   } catch (error) {
-    console.warn('[novasite] could not re-init interactions', error)
+    console.warn('[tita] could not re-init interactions', error)
   }
   // Re-binds the widgets too — the dropdowns and the testimonial slider.
   try {
@@ -140,7 +140,7 @@ function reinitInteractions() {
   }
 }
 
-export function NovasiteRuntime({ rootId }: { rootId?: string }) {
+export function SectionRuntime({ rootId }: { rootId?: string }) {
   const pathname = usePathname()
 
   useEffect(() => {
@@ -152,7 +152,7 @@ export function NovasiteRuntime({ rootId }: { rootId?: string }) {
       .then(() => {
         if (!cancelled) reinitInteractions()
       })
-      .catch((error) => console.error('[novasite] runtime failed', error))
+      .catch((error) => console.error('[tita] runtime failed', error))
 
     return () => {
       cancelled = true

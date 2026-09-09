@@ -139,7 +139,7 @@ export function PixiGallery({ images, ratio = 56.25, legendLabel }: Props) {
           glProgram: GlProgram.from({
             vertex: GALLERY_VERTEX,
             fragment: GALLERY_FRAGMENT,
-            name: 'monopo-gallery',
+            name: 'tita-gallery',
           }),
           resources: {
             galleryUniforms: uniforms,

@@ -1,13 +1,13 @@
-// Verbatim markup from the Novasite template (`full home .zip`): the `.sticky` wrapper — `section big-image` pinned behind `section award`.
+// Verbatim markup from the Tita template (`full home .zip`): the `.sticky` wrapper — `section big-image` pinned behind `section award`.
 // Only the runtime artefacts of the capture were removed — SplitText's per-letter
 // divs, GSAP/IX2 inline styles and the widget state Webflow's runtime rebuilds.
-// Styling comes from `src/styles/novasite.css`; motion from the Webflow IX2 runtime.
-export function NovasiteSticky() {
+// Styling comes from `src/styles/tita-sections.css`; motion from the Webflow IX2 runtime.
+export function StickySection() {
   return (
     <div className="sticky">
       <section className="section big-image" data-w-id="65653248-bc63-bd3c-67c7-985582013b5e">
         <div className="big-img-fixed">
-          <img alt="" className="big-img-fixed" loading="lazy" src="/novasite/big-image.webp" />
+          <img alt="" className="big-img-fixed" loading="lazy" src="/tita/big-image.webp" />
         </div>
       </section>
       <section className="section award" data-w-id="a6132172-68e8-d2db-9135-bc0a9702802e">
